@@ -1,0 +1,38 @@
+---
+import { Image } from "astro:assets";
+import logoBuildWithAI from "../assets/images/buildWithAILogo.svg";
+import boliviaLogo from "../assets/images/bolivia-logo.svg";
+---
+
+<header class="banner">
+  <section class="banner_actions flex flex-col justify-center w-full lg:w-1/2 xl:w-1/2 h-full items-center">
+    <Image src={logoBuildWithAI} alt="Build with AI Logo" class="w-full xl:w-2/3" />
+    <a
+      href="/"
+      class="banner__button flex items-center justify-center px-3 py-2 uppercase w-250"
+      target="_blank"
+      rel="noopener"
+    >
+      Regístrate Aquí
+    </a>
+  </section>
+  <Image
+    src={boliviaLogo}
+    alt="Bolivia Logo"
+    class="bg-white lg:bg-transparent absolute bottom-5 right-10 w-16 xl:w-[152px]"
+  />
+</header>
+
+<style>
+  .banner {
+    background-image: url("../assets/images/black-lines.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+
+    .banner__button {
+      background: #000;
+      color: white;
+    }
+  }
+</style>
