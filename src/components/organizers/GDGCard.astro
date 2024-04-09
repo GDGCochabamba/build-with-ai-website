@@ -2,26 +2,56 @@
 import { Image } from "astro:assets"
 import GDGlogo from "../../assets/images/GDG-logo.svg"
 
-const { url, name } = Astro.props
+import Facebook from "../../assets/icons/Facebook.svg"
+import Instagram from "../../assets/icons/Instagram.svg"
+import Twitter from "../../assets/icons/Twitter.svg"
+import TikTok from "../../assets/icons/Tiktok.svg"
+import Linkedin from "../../assets/icons/Linkedin.svg"
+
+const socialIcon = {
+  facebook: Facebook,
+  instagram: Instagram,
+  tiktok: TikTok,
+  twitter: Twitter,
+  linkedin: Linkedin,
+}
+
+const { url, name, socialNetworks } = Astro.props
 ---
 
 <div class="w-1/2 sm:w-1/3">
-  <a href={url} target="_blank">
-    <div class="atropos gdg-card">
-      <div class="atropos-scale">
-        <div class="atropos-rotate">
-          <div class="atropos-inner">
-            <div class="my-4 md:m-8 flex flex-col">
-              <Image src={GDGlogo} alt="GDG logo" class="mx-auto" data-atropos-offset="-1" />
-              <span class="text-gray font-medium text-sm sm:text-xl mx-auto" data-atropos-offset="3"
-                >{name}</span
-              >
+  <div class="my-5 mx-1 md:m-8 flex flex-col items-center space-y-4">
+    <a href={url} target="_blank">
+      <div class="atropos gdg-card">
+        <div class="atropos-scale">
+          <div class="atropos-rotate">
+            <div class="atropos-inner">
+              <div class="flex flex-col items-center">
+                <Image src={GDGlogo} alt="GDG logo" data-atropos-offset="-1" />
+                <span class="text-gray font-medium sm:text-xl" data-atropos-offset="4">
+                  {name}
+                </span>
+              </div>
             </div>
           </div>
         </div>
       </div>
+    </a>
+
+    <div class="inline-flex space-x-5">
+      {
+        socialNetworks?.map(({ type, url }) => (
+          <a href={url} target="_blank">
+            <Image
+              src={socialIcon[type]}
+              class="w-6 sm:h-6 opacity-80 hover:opacity-100 transition-opacity"
+              alt="icon"
+            />
+          </a>
+        ))
+      }
     </div>
-  </a>
+  </div>
 </div>
 
 <script>
