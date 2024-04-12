@@ -1,21 +1,37 @@
 ---
-import { Image } from "astro:assets";
+import { Image } from 'astro:assets';
 
-import logoBuildWithAI from "../assets/images/buildWithAILogo.svg";
-import boliviaLogo from "../assets/images/bolivia-logo.svg";
+import logoBuildWithAI from '../assets/images/buildWithAILogo.svg';
+import boliviaLogo from '../assets/images/bolivia-logo.svg';
 ---
 
 <section class="banner">
-  <div class="banner_actions flex flex-col justify-center w-full lg:w-1/2 xl:w-1/2 h-full items-center">
-    <Image src={logoBuildWithAI} alt="Build with AI Logo" class="w-full xl:w-2/3" />
-    <a
-      href="https://b.link/RegistroBuildWithAI"
-      class="banner__button flex items-center justify-center px-3 py-2 uppercase w-250"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      Regístrate Aquí
-    </a>
+  <div
+    class="banner_actions flex flex-col justify-center w-full lg:w-1/2 xl:w-1/2 h-full items-center"
+  >
+    <Image
+      src={logoBuildWithAI}
+      alt="Build with AI Logo"
+      class="w-full xl:w-2/3"
+    />
+    <div class="flex gap-3">
+      <a
+        href="https://b.link/RegistroBuildWithAI"
+        class="banner__button flex items-center justify-center px-3 py-2 uppercase w-250"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Regístrate Aquí
+      </a>
+      <a
+        href="https://b.link/BuildWithAIHackathon"
+        class="banner__button banner__button--secondary flex items-center justify-center px-3 py-2 uppercase w-250"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Más información
+      </a>
+    </div>
   </div>
   <Image
     src={boliviaLogo}
@@ -26,14 +42,20 @@ import boliviaLogo from "../assets/images/bolivia-logo.svg";
 
 <style>
   .banner {
-    background-image: url("../assets/images/black-lines.svg");
+    background-image: url('../assets/images/black-lines.svg');
     background-size: cover;
     background-repeat: no-repeat;
-    height: 100vh;
+    height: 100dvh;
 
     .banner__button {
       background: #000;
       color: white;
+
+      &.banner__button--secondary {
+        background: #fff;
+        border: 1px solid #000;
+        color: #000;
+      }
     }
   }
 </style>
