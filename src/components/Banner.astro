@@ -1,20 +1,20 @@
 ---
 import { Image } from 'astro:assets';
 
-import logoBuildWithAI from '../assets/images/buildWithAILogo.svg';
+import logoBuildWithAI from '../assets/images/logo-build-with-ai.png';
 import boliviaLogo from '../assets/images/bolivia-logo.svg';
 ---
 
 <section class="banner">
   <div
-    class="banner_actions flex flex-col justify-center w-full lg:w-1/2 xl:w-1/2 h-full items-center"
+    class="banner_actions flex flex-col justify-center items-center sm:items-start md:items-center w-full lg:w-1/2 xl:w-1/2 h-full"
   >
     <Image
       src={logoBuildWithAI}
       alt="Build with AI Logo"
-      class="w-full xl:w-2/3"
+      class="w-full sm:w-2/5 md:w-3/5 lg:w-full xl:w-3/5 mb-4 mx-2 md:mb-10"
     />
-    <div class="flex gap-3">
+    <div class="flex gap-3 sm:ml-2">
       <a
         href="https://b.link/RegistroBuildWithAI"
         class="banner__button flex items-center justify-center px-3 py-2 uppercase w-250"
