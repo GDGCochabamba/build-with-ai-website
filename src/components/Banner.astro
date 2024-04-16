@@ -5,19 +5,19 @@ import logoBuildWithAI from '../assets/images/logo-build-with-ai.png';
 import boliviaLogo from '../assets/images/bolivia-logo.svg';
 ---
 
-<section class="banner">
+<section class="relative bg-hero-section bg-cover bg-no-repeat h-dvh min-h-800">
   <div
-    class="banner_actions flex flex-col justify-center items-center sm:items-start md:items-center w-full lg:w-1/2 xl:w-1/2 h-full"
+    class="flex flex-col justify-center xl:w-1/2 h-full"
   >
     <Image
       src={logoBuildWithAI}
       alt="Build with AI Logo"
-      class="w-full sm:w-2/5 md:w-3/5 lg:w-full xl:w-3/5 mb-4 mx-2 md:mb-10"
+      class="w-full md:w-4/5 lg:w-3/5 xl:w-4/5 mb-10 px-2 md:px-10"
     />
-    <div class="flex gap-3 sm:ml-2">
+    <div class="flex justify-center md:justify-start gap-3 px-4 md:px-20">
       <a
         href="https://b.link/RegistroBuildWithAI"
-        class="banner__button flex items-center justify-center px-3 py-2 uppercase w-250"
+        class="bg-black text-white flex items-center justify-center px-3 py-2 uppercase w-250"
         target="_blank"
         rel="noopener noreferrer"
       >
@@ -25,7 +25,7 @@ import boliviaLogo from '../assets/images/bolivia-logo.svg';
       </a>
       <a
         href="https://b.link/BuildWithAIHackathon"
-        class="banner__button banner__button--secondary flex items-center justify-center px-3 py-2 uppercase w-250"
+        class="bg-white text-black border border-solid border-black flex items-center justify-center px-3 py-2 uppercase w-250"
         target="_blank"
         rel="noopener noreferrer"
       >
@@ -39,23 +39,3 @@ import boliviaLogo from '../assets/images/bolivia-logo.svg';
     class="bg-white lg:bg-transparent absolute bottom-5 right-10 w-16 xl:w-[152px]"
   />
 </section>
-
-<style>
-  .banner {
-    background-image: url('../assets/images/black-lines.svg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 100dvh;
-
-    .banner__button {
-      background: #000;
-      color: white;
-
-      &.banner__button--secondary {
-        background: #fff;
-        border: 1px solid #000;
-        color: #000;
-      }
-    }
-  }
-</style>
