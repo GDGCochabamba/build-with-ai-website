@@ -1,0 +1,64 @@
+---
+import { Image } from "astro:assets"
+
+import header from "../assets/images/header.png"
+---
+
+<nav class="bg-black fixed w-full z-20 top-0 left-0">
+  <div class="flex flex-wrap items-center justify-between p-3 md:px-4">
+    <a href="/#" aria-current="page">
+      <Image src={header} alt="Build with AI Logo" width="196" />
+    </a>
+    <div class="flex md:order-2 lg:hidden">
+      <button
+        data-collapse-toggle="navbar-sticky"
+        type="button"
+        class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-white rounded-lg md:hidden focus:outline-none focus:ring-2 ring-gray"
+        aria-controls="navbar-sticky"
+        aria-expanded="false"
+      >
+        <span class="sr-only">Open main menu</span>
+        <svg
+          class="w-5 h-5"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 17 14"
+        >
+          <path
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M1 1h15M1 7h15M1 13h15"></path>
+        </svg>
+      </button>
+    </div>
+    <div
+      class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
+      id="navbar-sticky"
+    >
+      <ul
+        class="flex flex-col p-4 md:p-0 mt-4 font-medium border md:flex-row md:space-x-8 md:mt-0 md:border-0 bg-black md:bg-black border-gray text-white"
+      >
+        <li>
+          <a href="/#organizadores" class="block py-1 px-4">Equipo</a>
+        </li>
+
+        <li>
+          <a href="playground" class="block py-1 px-4">Playground ✨</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<script>
+  document.querySelector("[data-collapse-toggle]").addEventListener("click", function () {
+    const target = document.getElementById(this.getAttribute("aria-controls"))
+    const expanded = this.getAttribute("aria-expanded") === "true" || false
+
+    this.setAttribute("aria-expanded", !expanded)
+    target.classList.toggle("hidden")
+  })
+</script>

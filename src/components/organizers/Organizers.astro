@@ -4,7 +4,7 @@ import chaptersInfo from "./gdgChaptersInfo.json"
 import GDGCard from "./GDGCard.astro"
 ---
 
-<div class="max-w-screen-xl mx-auto px-4 py-16 space-y-8">
+<div id="organizadores" class="max-w-screen-xl mx-auto px-4 py-16 space-y-8">
   <h2 class="text-2xl sm:text-3xl font-bold mx-auto">Equipo de organización</h2>
   <div class="flex flex-wrap justify-center">
     {chaptersInfo.map(info => <GDGCard {...info} />)}
