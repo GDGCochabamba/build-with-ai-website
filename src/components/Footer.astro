@@ -1,0 +1,41 @@
+---
+import { Image } from "astro:assets";
+import logoBuildWithAI from "../assets/images/logo-build-with-ai-white.svg";
+---
+<footer class="bg-black py-8 md:py-12 px-4 md:px-8 flex flex-col items-center">
+    <section class="mb-8 w-full max-w-lg mx-auto text-center">
+        <h2 class="uppercase text-white text-3xl font-bold mb-6">Contactanos</h2>
+        <p class="text-white text-opacity-75">
+            ¿Tienes alguna pregunta? ¡No dudes en contactarnos!
+        </p>
+        <form class="mt-10 space-y-6 text-left">
+            <div>
+                <label for="name" class="block text-white text-md font-medium mb-2">
+                  Nombre
+                </label>
+                <input type="text" id="name" placeholder="Tu nombre completo" class="block w-full bg-gray-800 text-white border border-gray-600 rounded py-2 px-3 leading-tight focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50"/>
+            </div>
+            <div>
+                <label for="email" class="block text-white text-md font-medium mb-2">
+                  Correo electrónico
+                </label>
+                <input type="email" id="email" placeholder="ejemplo@email.com" class="block w-full bg-gray-800 text-white border border-gray-600 rounded py-2 px-3 leading-tight focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50"/>
+            </div>
+            <div>
+                <label for="message" class="block text-white text-md font-medium mb-2">
+                  Mensaje
+                </label>
+                <textarea id="message" placeholder="Cómo podemos ayudarte?" class="block w-full bg-gray-800 text-white border border-gray-600 rounded py-2 px-3 leading-tight focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50"></textarea>
+            </div>
+            <button type="submit" class="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+                Enviar
+            </button>
+        </form>
+    </section>
+    <div class="w-full border-t border-white opacity-25 my-4"></div>
+    <div class="w-full px-0 pt-6 md:pt-8 flex items-center justify-center md:justify-start">
+        <Image src={logoBuildWithAI} alt="Build with AI Logo" class="h-auto max-w-xs md:max-w-xs"/>
+        <span></span>
+    </div>    
+</footer>
+
