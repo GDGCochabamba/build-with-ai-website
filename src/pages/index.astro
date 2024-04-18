@@ -1,11 +1,13 @@
 ---
-import Banner from "../components/Banner.astro";
-import Layout from "../layouts/Layout.astro";
-import AboutUs from "../components/AboutUs.astro";
-import Organizers from "../components/organizers/Organizers.astro";
+import Navbar from "components/Navbar.astro"
+import Banner from "../components/Banner.astro"
+import Layout from "../layouts/Layout.astro"
+import AboutUs from "../components/AboutUs.astro"
+import Organizers from "../components/organizers/Organizers.astro"
 ---
 
 <Layout>
+  <Navbar />
   <main>
     <Banner />
     <AboutUs />

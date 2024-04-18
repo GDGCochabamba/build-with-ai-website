@@ -1,0 +1,100 @@
+<script src="https://cdn.jsdelivr.net/npm/@magenta/image@^0.2.1"></script>
+
+<div class="max-w-screen-lg mt-12 mx-auto px-4 py-16">
+  <h2 class="text-2xl font-bold">Transferencia de estilo</h2>
+  <p class="sm:text-lg mt-1 mb-4">
+    La transferencia de estilo aplica el estilo de una imagen a otra. Sube una imagen para ver cómo
+    se aplica un estilo dibujo a lapiz, puedes cambiar la imagen para aplicar otro estilo.
+  </p>
+
+  <div class="flex space-x-2 sm:space-x-8 mb-6">
+    <div class="w-1/2 flex flex-col min-h-64 sm:text-lg">
+      <label for="content" class="py-1 text-center font-semibold bg-black text-white cursor-pointer">
+        1. Sube una imagen
+        <input type="file" id="content" accept="image/*" hidden />
+      </label>
+
+      <img id="contentImg" class="mt-2 mx-auto" />
+    </div>
+
+    <div class="w-1/2 flex flex-col min-h-64 sm:text-lg">
+      <label for="style" class="py-1 text-center font-semibold bg-black text-white cursor-pointer">
+        2. Sube un estilo
+        <input type="file" id="style" accept="image/*" hidden />
+      </label>
+      <img id="styleImg" class="mt-2 mx-auto" src="seaport.jpg" />
+    </div>
+  </div>
+
+  <div id="result" class="flex flex-col bg-black w-fit mx-auto py-2 px-4 pb-4 space-y-4 invisible">
+    <span class="text-center font-bold text-white">Resultado ✨</span>
+    <canvas id="stylized" class="mx-auto" height="0"></canvas>
+  </div>
+</div>
+
+<script>
+  function loadFile(input, imgId) {
+    const file = input?.files[0]
+    const output = document.getElementById(imgId) as HTMLImageElement
+
+    const reader = new FileReader()
+    reader.onload = () => {
+      output.src = reader.result
+
+      // reduce image size for better performance
+      if (imgId === "contentImg") {
+        output.width = 400
+      }
+    }
+
+    if (file) reader.readAsDataURL(file)
+  }
+
+  document.getElementById("content").addEventListener("change", function () {
+    loadFile(this, "contentImg")
+  })
+
+  document.getElementById("style").addEventListener("change", function () {
+    loadFile(this, "styleImg")
+  })
+
+  const contentImage = document.getElementById("contentImg") as HTMLImageElement
+  const styleImage = document.getElementById("styleImg") as HTMLImageElement
+
+  const resultContainer = document.getElementById("result")
+  const stylizedCanvas = document.getElementById("stylized") as HTMLCanvasElement
+  const ctx = stylizedCanvas.getContext("2d")
+
+  let model
+  async function getModel() {
+    if (!model?.initialized) {
+      model = new mi.ArbitraryStyleTransferNetwork()
+      await model.initialize()
+    }
+    return model
+  }
+
+  async function stylize() {
+    if (!contentImage.src || !styleImage.src) return
+
+    ctx.reset()
+
+    resultContainer.classList.remove("invisible")
+    stylizedCanvas.width = contentImage.width
+    stylizedCanvas.height = contentImage.height
+    stylizedCanvas.classList.add("bg-gray", "animate-pulse")
+
+    // delay to prevent freezing the UI
+    setTimeout(async () => {
+      const model = await getModel()
+      const imageData = await model.stylize(contentImage, styleImage)
+
+      stylizedCanvas.classList.remove("animate-pulse")
+
+      ctx.putImageData(imageData, 0, 0)
+    }, 500)
+  }
+
+  styleImage.onload = stylize
+  contentImage.onload = stylize
+</script>
