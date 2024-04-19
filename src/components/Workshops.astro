@@ -1,0 +1,64 @@
+---
+import angel from "../assets/images/workshops/Angel-Bulnes.jpg"
+import julio from "../assets/images/workshops/Julio-Colque.jpg"
+
+const workshops = [
+  {
+    date: "Vie. 19 abril 2024",
+    details: [
+      {
+        time: "20:00 (GMT-4)",
+        title: "Inteligencia Artificial, ética y herramientas de apoyo",
+        img: julio,
+        speaker: "Julio Jhonathan Colque Alcón 🇧🇴",
+        position: "Ingeniero de sistemas",
+      },
+      {
+        time: "20:30 (GMT-4)",
+        title: "Beyond Code: Qué hacer cuando no estás programando y construyes un producto",
+        img: angel,
+        speaker: "Angel Bulnes 🇭🇳",
+        position: "Senior mobile developer",
+      },
+    ],
+  },
+]
+
+import { Image } from "astro:assets"
+---
+
+<div id="talleres" class="bg-black text-white">
+  <div class="max-w-screen-xl mx-auto px-4 py-16 space-y-4">
+    <h2 class="text-2xl sm:text-3xl font-bold mx-auto">Talleres previos</h2>
+
+    {
+      workshops.map(({ date, details }) => (
+        <div class="space-y-4">
+          <div class="flex items-center space-x-4">
+            <span class="w-60 md:w-fit text-nowrap font-bold md:text-xl md:text">{date}</span>
+            <hr class="w-full border-blue-400" />
+          </div>
+
+          {details?.map(({ time, title, img, speaker, position }) => (
+            <div class="flex flex-col space-y-1 md:flex-row md:space-x-4">
+              <div class="w-full md:w-28 bg-blue-500 flex items-center p-1">
+                <p class="font-medium md:text-xl mx-auto text-center">{time}</p>
+              </div>
+
+              <div class="space-y-2 pb-2">
+                <h3 class="text-lg md:text-2xl font-bold leading-tight">{title}</h3>
+                <div class="flex space-x-4 items-start">
+                  <Image src={img} alt={speaker} width="60" height="60" />
+                  <div class="leading-tight">
+                    <p class="font-medium md:text-lg">{speaker}</p>
+                    <p class="md:text-lg">{position}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      ))
+    }
+  </div>
+</div>
