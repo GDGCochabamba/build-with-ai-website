@@ -1,10 +1,10 @@
 ---
+import AboutUs from 'components/AboutUs.astro';
+import Banner from 'components/Banner.astro';
+import Layout from 'layouts/Layout.astro';
 import Navbar from 'components/Navbar.astro';
-import Banner from '../components/Banner.astro';
-import Layout from '../layouts/Layout.astro';
-import AboutUs from '../components/AboutUs.astro';
+import Organizers from 'components/organizers/Organizers.astro';
 import Workshops from 'components/Workshops.astro';
-import Organizers from '../components/organizers/Organizers.astro';
 ---
 
 <Layout>
@@ -16,11 +16,3 @@ import Organizers from '../components/organizers/Organizers.astro';
     <Organizers />
   </main>
 </Layout>
-
-<script is:inline src="https://bitter-breeze-0001.ploomberapp.io/copilot/index.js"
-></script>
-<script>
-  window.mountChainlitWidget({
-    chainlitServer: 'https://bitter-breeze-0001.ploomberapp.io',
-  });
-</script>
