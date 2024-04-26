@@ -1,0 +1,22 @@
+---
+import { Image } from "astro:assets"
+
+const { time, title, img, speaker, position } = Astro.props
+---
+
+<div class="flex flex-col space-y-1 md:flex-row md:space-x-4">
+  <div class="w-full md:w-28 bg-blue-500 flex items-center p-1">
+    <p class="font-medium md:text-xl mx-auto text-center">{time}</p>
+  </div>
+
+  <div class="space-y-0">
+    <h3 class="text-lg md:text-2xl font-bold leading-tight mb-2">{title}</h3>
+    <div class="flex space-x-4 items-start">
+      <Image src={img} alt={speaker} class="aspect-square object-cover" width="60" height="60" />
+      <div class="leading-tight">
+        <p class="font-medium md:text-lg">{speaker}</p>
+        <p class="md:text-lg">{position}</p>
+      </div>
+    </div>
+  </div>
+</div>

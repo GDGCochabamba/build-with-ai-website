@@ -1,15 +1,21 @@
 ---
+import WorkshopDetail from "./WorkshopDetail.astro"
+
 import angel from "../assets/images/workshops/Angel-Bulnes.jpg"
 import julio from "../assets/images/workshops/Julio-Colque.jpg"
 
 import aaron from "../assets/images/workshops/Aaron-Guerrero.jpeg"
-import mauro from "../assets/images/workshops/Mauro-Gomez.jpeg"
 import vanesa from "../assets/images/workshops/Vanesa-Velasquez.png"
 import julioCesar from "../assets/images/workshops/Julio-Cesar-Ruiz.jpg"
 
 const workshops = [
   {
     date: "Vie. 19 abril 2024",
+    links: [
+      "https://www.facebook.com/gdgsucre/videos/1605607886943684/",
+      "https://www.facebook.com/GDGCochabamba/videos/1111880593455642/",
+      "https://www.facebook.com/GDGSantaCruz/videos/434220749257476/",
+    ],
     details: [
       {
         time: "20:00 (GMT-4)",
@@ -29,6 +35,11 @@ const workshops = [
   },
   {
     date: "Mar. 23 abril 2024",
+    links: [
+      "https://www.facebook.com/GDGSantaCruz/videos/980815600258593/",
+      "https://www.facebook.com/gdgsucre/videos/1661837077980123/",
+      "https://www.facebook.com/GDGCochabamba/videos/956867209435782/",
+    ],
     details: [
       {
         time: "20:00 (GMT-4)",
@@ -38,31 +49,22 @@ const workshops = [
         position: "Cloud Developer",
       },
       {
-        time: "20:30 (GMT-4)",
-        title: "Google Gemini y Gemma: El inicio de una nueva era en IA",
-        img: mauro,
-        speaker: "Mauro Gómez Herrera 🇨🇱",
-        position: "CEO de PyxJam",
-      },
-      {
-        time: "21:00 (GMT-4)",
-        title: "ChatBot WhatsApp con IA Gemini ✨ de Google",
-        img: vanesa,
-        speaker: "Vanesa Velasquez 🇧🇴",
-        position: "Ingeniera de sistemas",
-      },
-      {
-        time: "21:30 (GMT-4)",
+        time: "20:45 (GMT-4)",
         title: "Desarrollando producto en Tecnología con IA",
         img: julioCesar,
         speaker: "Julio César Ruiz Tejada 🇵🇦",
         position: "Ingeniero en Sistema y Computación",
       },
+      {
+        time: "21:30 (GMT-4)",
+        title: "ChatBot WhatsApp con IA Gemini ✨ de Google",
+        img: vanesa,
+        speaker: "Vanesa Velasquez 🇧🇴",
+        position: "Ingeniera de sistemas",
+      },
     ],
   },
 ]
-
-import { Image } from "astro:assets"
 ---
 
 <div id="talleres" class="bg-black text-white">
@@ -70,41 +72,31 @@ import { Image } from "astro:assets"
     <h2 class="text-2xl sm:text-3xl font-bold mx-auto">Talleres previos</h2>
 
     {
-      workshops.map(({ date, details }) => (
-        <div class="space-y-4">
-          <div class="flex items-center space-x-4">
-            <span class="w-60 md:w-fit text-nowrap font-bold mt-2 text-lg md:text-2xl md:text">
-              {date}
-            </span>
-            <hr class="w-full border-blue-400" />
-          </div>
+      workshops.map(({ date, links, details }) => {
+        // choose a random link to avoid favoring any particular chapter
+        const videoLink = links[Math.floor(Math.random() * links.length)]
 
-          {details?.map(({ time, title, img, speaker, position }) => (
-            <div class="flex flex-col space-y-1 md:flex-row md:space-x-4">
-              <div class="w-full md:w-28 bg-blue-500 flex items-center p-1">
-                <p class="font-medium md:text-xl mx-auto text-center">{time}</p>
-              </div>
-
-              <div class="space-y-2 pb-2">
-                <h3 class="text-lg md:text-2xl font-bold leading-tight">{title}</h3>
-                <div class="flex space-x-4 items-start">
-                  <Image
-                    src={img}
-                    alt={speaker}
-                    class="aspect-square object-cover"
-                    width="60"
-                    height="60"
-                  />
-                  <div class="leading-tight">
-                    <p class="font-medium md:text-lg">{speaker}</p>
-                    <p class="md:text-lg">{position}</p>
-                  </div>
-                </div>
-              </div>
+        return (
+          <div class="space-y-4">
+            <div class="flex items-center space-x-4 mt-6">
+              <span class="w-60 md:w-fit text-nowrap font-bold text-lg md:text-2xl">{date}</span>
+              <hr class="w-full border-blue-500" />
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href={videoLink}
+                class="text-nowrap text-red-500 hover:bg-red-500 hover:text-black font-semibold border px-1  md:text-lg md:px-2"
+              >
+                Ver en Facebook
+              </a>
             </div>
-          ))}
-        </div>
-      ))
+
+            {details?.map(detail => (
+              <WorkshopDetail {...detail} />
+            ))}
+          </div>
+        )
+      })
     }
   </div>
 </div>
