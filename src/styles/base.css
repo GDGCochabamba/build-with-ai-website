@@ -25,3 +25,7 @@ body {
   margin: 0;
   padding: 0;
 }
+
+.MuiStack-root .css-2fbwda {
+  display: none;
+}
