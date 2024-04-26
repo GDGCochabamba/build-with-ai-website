@@ -8,6 +8,10 @@ import aaron from "../assets/images/workshops/Aaron-Guerrero.jpeg"
 import vanesa from "../assets/images/workshops/Vanesa-Velasquez.png"
 import julioCesar from "../assets/images/workshops/Julio-Cesar-Ruiz.jpg"
 
+import mauro from "../assets/images/workshops/Mauro-Gomez.jpeg"
+import sandro from "../assets/images/workshops/Sandro-Moreira.png"
+import juanGuillermo from "../assets/images/workshops/Juan-Guillermo.jpeg"
+
 const workshops = [
   {
     id: "1",
@@ -66,6 +70,38 @@ const workshops = [
       },
     ],
   },
+  {
+    id: "3",
+    date: "Vie. 26 abril 2024",
+    links: [
+      "https://www.facebook.com/gdgtarija/",
+      "https://www.facebook.com/GDGLaPaz/",
+      "https://www.facebook.com/GDGCochabamba/",
+    ],
+    details: [
+      {
+        time: "20:00 (GMT-4)",
+        title: "Google Gemini y Gemma: El inicio de una nueva era en IA",
+        img: mauro,
+        speaker: "Mauro Gómez Herrera 🇨🇱",
+        position: "CEO de PyxJam",
+      },
+      {
+        time: "20:30 (GMT-4)",
+        title: "Potenciando sus aplicaciones con IA de Google MediaPipe",
+        img: sandro,
+        speaker: "Sandro Moreira 🇧🇷",
+        position: "Professor y CIO en Univ. Rio Verde",
+      },
+      {
+        time: "21:00 (GMT-4)",
+        title: "Evaluando los Generative Models con Rapid Evaluation de Vertex AI",
+        img: juanGuillermo,
+        speaker: "Juan Guillermo Gómez 🇲🇽",
+        position: "GDE en Machine Learning",
+      },
+    ],
+  },
 ]
 ---
 
@@ -100,6 +136,7 @@ const workshops = [
 
 <script is:inline define:vars={{ workshops }}>
   for ({ id, links } of workshops) {
+    // choose a random link to avoid favoring any particular chapter
     document.getElementById(id).href = links[Math.floor(Math.random() * links.length)]
   }
 </script>
