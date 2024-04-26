@@ -10,6 +10,7 @@ import julioCesar from "../assets/images/workshops/Julio-Cesar-Ruiz.jpg"
 
 const workshops = [
   {
+    id: "1",
     date: "Vie. 19 abril 2024",
     links: [
       "https://www.facebook.com/gdgsucre/videos/1605607886943684/",
@@ -34,10 +35,11 @@ const workshops = [
     ],
   },
   {
+    id: "2",
     date: "Mar. 23 abril 2024",
     links: [
-      "https://www.facebook.com/GDGSantaCruz/videos/980815600258593/",
       "https://www.facebook.com/gdgsucre/videos/1661837077980123/",
+      "https://www.facebook.com/GDGSantaCruz/videos/980815600258593/",
       "https://www.facebook.com/GDGCochabamba/videos/956867209435782/",
     ],
     details: [
@@ -72,31 +74,32 @@ const workshops = [
     <h2 class="text-2xl sm:text-3xl font-bold mx-auto">Talleres previos</h2>
 
     {
-      workshops.map(({ date, links, details }) => {
-        // choose a random link to avoid favoring any particular chapter
-        const videoLink = links[Math.floor(Math.random() * links.length)]
-
-        return (
-          <div class="space-y-4">
-            <div class="flex items-center space-x-4 mt-6">
-              <span class="w-60 md:w-fit text-nowrap font-bold text-lg md:text-2xl">{date}</span>
-              <hr class="w-full border-blue-500" />
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href={videoLink}
-                class="text-nowrap text-red-500 hover:bg-red-500 hover:text-black font-semibold border px-1  md:text-lg md:px-2"
-              >
-                Ver en Facebook
-              </a>
-            </div>
-
-            {details?.map(detail => (
-              <WorkshopDetail {...detail} />
-            ))}
+      workshops.map(({ id, date, details }) => (
+        <div class="space-y-4">
+          <div class="flex items-center space-x-4 mt-6">
+            <span class="w-60 md:w-fit text-nowrap font-bold text-lg md:text-2xl">{date}</span>
+            <hr class="w-full border-blue-500" />
+            <a
+              id={id}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-nowrap text-red-500 hover:bg-red-500 hover:text-black font-semibold border px-1  md:text-lg md:px-2"
+            >
+              Ver en Facebook
+            </a>
           </div>
-        )
-      })
+
+          {details?.map(detail => (
+            <WorkshopDetail {...detail} />
+          ))}
+        </div>
+      ))
     }
   </div>
 </div>
+
+<script is:inline define:vars={{ workshops }}>
+  for ({ id, links } of workshops) {
+    document.getElementById(id).href = links[Math.floor(Math.random() * links.length)]
+  }
+</script>
