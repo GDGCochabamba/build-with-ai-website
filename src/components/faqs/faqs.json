@@ -1,14 +1,14 @@
 [
     {
-        "question": "¿Pregunta 1?",
-        "answer": "Respuesta 1"
+        "question": "No tengo equipo, ¿Puedo participar?",
+        "answer": "¡Claro que puedes participar! Los organizadores del evento asignarán a los participantes que no tengan equipo a un equipo que esté incompleto. Así que no te preocupes."
     },
     {
-        "question": "¿Pregunta 2?",
-        "answer": "Respuesta 2"
+        "question": "¿Qué habilidades necesito para destacarme?",
+        "answer": "No necesitas tener conocimientos previos para ser parte del hackathon. BuildWith AI está abierto a personas de diferentes áreas y niveles de experiencia, unidos por el poder la de la inteligencia artificial."
     },
     {
-        "question": "¿Pregunta 3?",
-        "answer": "Respuesta 3"
+        "question": "¿Cómo conformo mi equipo para participar?",
+        "answer": "Te recomendamos contar con un equipo de 3 - 5 personas, con diversas habilidades e ideas, para trabajar de manera óptima y aprovechar al máximo esta experiencia."
     }
 ]
