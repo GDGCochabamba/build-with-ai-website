@@ -1,0 +1,132 @@
+---
+import { Image } from "astro:assets";
+import { mentors } from "../data/mentors"
+---
+
+
+<script>
+  import { mentors } from "data/mentors";
+
+  let popupOpen = false;
+
+  function showPopup(mentor) {
+    if (popupOpen) return;
+
+    const popup = document.createElement("div");
+    popup.classList.add(
+    "fixed", 
+    "top-1/2", 
+    "left-1/2", 
+    "-translate-x-1/2", 
+    "-translate-y-1/2", 
+    "bg-white", 
+    "p-6", 
+    "border", 
+    "border-gray-300", 
+    "rounded-lg", 
+    "shadow-lg", 
+    "min-w-0",
+    "max-w-full",
+    "min-h-0", 
+    "max-h-lg", 
+    "overflow-auto"
+  );
+    popup.setAttribute("id", "mentorPopupContainer");
+
+    const socialLinks = mentor.social.map(socialItem => `
+      <a href="${socialItem.src}" target="_blank" rel="noopener">
+        <Image
+          class="h-5 w-5 lg:h-6 lg:w-6"
+          src="${socialItem.social_img.src}"
+          alt="Social Media logo"
+        />
+      </a>
+    `).join("");
+
+    const popupContent = `
+      <div class="relative" id="mentorPopup">
+        <div class="grid grid-cols-5 gap-4">
+          <div class="col-span-2 justify-center flex items-center align-center">
+            <Image src="${mentor.img.src}" alt="mentor Photo" loading="lazy" class=" w-44 h-44 rounded-lg" />
+          </div>
+          <div class="col-span-3">
+            <h2 class="text-lg font-semibold">${mentor.name}</h2>
+            <p class="text-sm text-gray-700 mb-2">${mentor.bio || "No bio available."}</p>
+            <div class="flex items-center space-x-2">
+              ${socialLinks}
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
+
+    
+    popup.innerHTML = popupContent;
+    document.body.appendChild(popup);
+    document.addEventListener("click", handleOutsideClick);
+    popupOpen = true;
+    document.body.classList.add("overflow-hidden");
+  }
+
+  function closePopup() {
+    const popup = document.getElementById("mentorPopupContainer");
+    popup.remove();
+    document.removeEventListener("click", handleOutsideClick);
+    popupOpen = false;
+    document.body.classList.remove("overflow-hidden");
+  }
+
+  function handleOutsideClick(event) {
+    const popup = document.getElementById("mentorPopup");
+    if (!popup.contains(event.target)) {
+      closePopup();
+    }
+  }
+
+  const buttons = document.querySelectorAll("button.togglePopup");
+  buttons.forEach((button) => {
+    button.addEventListener("click", (event) => {
+      event.stopPropagation()
+      const mentorIndex = parseInt(
+        (button as HTMLElement).dataset.mentorIndex,
+        10
+      );
+      const mentor = mentors[mentorIndex];
+      showPopup(mentor);
+    });
+  });
+</script>
+
+<section
+  class="mentors-section px-6 py-20 md:px-10"
+>
+  <h2 class="text-3xl font-bold tracking-tight text-white">Mentors</h2>
+  <div
+    class="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8"
+  >
+    {
+      mentors.map((mentor, index) => (
+        <div class="flex flex-col items-center justify-center lg:flex-col lg:justify-center">
+          <button
+            class="aspect-h-1 aspect-w-1 w-50 overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7 togglePopup"
+            data-mentor-index={index}
+          >
+            <Image
+              src={mentor.img}
+              alt="mentor Photo"
+              loading="lazy"
+              class="h-40 w-40 object-cover object-center group-hover:opacity-75"
+            />
+          </button>
+          <label class="text-xl w-40 mt-4  text-white mb-5">{mentor.name}</label>
+        </div>
+      ))
+    }
+  </div>
+</section>
+
+<style>
+  .mentors-section{
+      background: #0e0d0d;
+  }
+</style>
