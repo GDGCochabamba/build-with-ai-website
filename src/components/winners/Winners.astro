@@ -1,0 +1,70 @@
+---
+import "swiper/css"
+import "swiper/css/pagination"
+
+import { Image } from "astro:assets"
+
+import Datachads from "../../assets/images/winners/Datachads.jpg"
+import Jabaquara from "../../assets/images/winners/Jabaquara.jpg"
+import UMARover from "../../assets/images/winners/UMARover.jpg"
+import Enigma from "../../assets/images/winners/Enigma.jpg"
+
+const winners = [
+  { name: "Datachads", src: Datachads },
+  { name: "Jabaquara", src: Jabaquara },
+  { name: "UMARover", src: UMARover },
+  { name: "Enigma", src: Enigma },
+]
+---
+
+<section class="flex bg-black p-4 lg:p-8">
+  <div class="mx-auto w-full max-w-screen-lg">
+    <h2 class="text-2xl md:text-3xl font-bold text-white">Ganadores</h2>
+
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        {
+          winners.map(winner => (
+            <div class="swiper-slide p-4 pb-8 lg:pb-10">
+              <Image
+                src={winner.src}
+                class="mx-auto"
+                alt={`Equipo ${winner.name}`}
+                loading="lazy"
+                width="600"
+                height="600"
+              />
+            </div>
+          ))
+        }
+      </div>
+
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .swiper-pagination {
+    --swiper-pagination-bullet-size: 10px;
+    --swiper-pagination-bullet-horizontal-gap: 6px;
+    --swiper-pagination-bullet-inactive-color: gray;
+    --swiper-pagination-bullet-inactive-opacity: 0.7;
+  }
+</style>
+
+<script>
+  import Swiper from "swiper/bundle"
+
+  new Swiper(".swiper", {
+    loop: true,
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: true,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+  })
+</script>
