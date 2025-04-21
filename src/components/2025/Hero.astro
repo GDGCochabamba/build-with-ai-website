@@ -1,0 +1,63 @@
+---
+import { Image } from "astro:assets"
+
+import Logo from "@/assets/images/logo-build-with-ai-2025.png"
+
+import Brackets from "@/assets/icons/brackets.svg"
+import Hash from "@/assets/icons/hash.svg"
+import Times from "@/assets/icons/times.svg"
+import CPU from "@/assets/icons/cpu.svg"
+import Atom from "@/assets/icons/atom.svg"
+import AngleBrackets from "@/assets/icons/angle-brackets.svg"
+
+import Calendar from "@/assets/icons/calendar.svg"
+import Distance from "@/assets/icons/distance.svg"
+---
+
+<main class="relative flex flex-col items-center mt-16 gap-8 lg:gap-12 bg-[url('./Background-2025.png')] bg-no-repeat">
+  <div class="absolute inset-0 hidden lg:block h-full w-full max-w-screen-2xl mx-auto">
+    <Brackets class="absolute top-16 left-16"/>
+    <Hash class="absolute top-12 right-20"/>
+    <Times class="absolute bottom-1/2 left-4"/>
+    <CPU class="absolute top-1/3 right-4"/>
+    <Atom class="absolute bottom-1/4 left-16"/>
+    <AngleBrackets  class="absolute bottom-1/4 right-16"/>
+  </div>
+
+  <Image
+    src={Logo}
+    alt="Build with AI Bolivia 2025 logo"
+    width={400}
+    class="mt-16 w-2/3 md:w-1/3 lg:w-fit"
+  />
+  <p class="text-3xl lg:text-4xl text-center font-bold px-4 max-w-screen-md leading-tight">
+    Sé parte del <span class="relative mr-1">
+      <span class="bg-blue-500 rotate-2 absolute inset-0"></span>
+      <span class="relative text-white pl-2">hackatón</span>
+    </span> de Inteligencia Artificial más importante de Bolivia
+  </p>
+  <p class="px-8 text-xl md:text-2xl text-center max-w-screen-sm">
+    Demuestra tu destreza y crea el futuro junto a otros apasionados por la tecnología
+  </p>
+  <button
+    class="text-lg font-medium rounded-full bg-blue-500 p-4 px-8 text-white disabled:opacity-50"
+    disabled
+  >
+    Inscripciones muy pronto
+  </button>
+
+  <div
+    class="grid grid-cols-1 md:grid-cols-2 font-bold text-2xl divide-y-2 md:divide-y-0 md:divide-x-2"
+  >
+    <div class="flex items-center gap-2 w-full justify-center py-2 md:py-0 md:px-8">
+      <Calendar width={32} height={32} /> 27 - 29 Junio
+    </div>
+    <div class="flex items-center gap-2 w-full justify-center py-2 md:py-0 md:px-8">
+      <Distance width={32} height={32} /> Santa Cruz
+    </div>
+  </div>
+
+  <div class="flex justify-center text-center text-3xl font-bold bg-blue-500 text-white p-4 w-full">
+    <p class="w-72 break-words md:w-full">Crea, conecta y transforma con IA.</p>
+  </div>
+</main>

@@ -1,30 +1,13 @@
 ---
-import AboutUs from 'components/AboutUs.astro';
-import Banner from 'components/Banner.astro';
 import Layout from 'layouts/Layout.astro';
-import Navbar from 'components/Navbar.astro';
-import Organizers from 'components/organizers/Organizers.astro';
-import Workshops from 'components/Workshops.astro';
-import Mentors from 'components/Mentors.astro';
-import AboutUs from "components/AboutUs.astro";
-import Banner from "components/Banner.astro";
-import Layout from "layouts/Layout.astro";
-import Navbar from "components/Navbar.astro";
-import Organizers from "components/organizers/Organizers.astro";
-import Workshops from "components/Workshops.astro";
-import Faqs from "components/faqs/Faqs.astro";
-import Sponsors from "components/sponsors/Sponsors.astro";
+
+import Hero from 'components/2025/Hero.astro';
+import Navbar from 'components/2025/Navbar.astro';
+import AboutUs from '@/components/AboutUs.astro';
 ---
 
 <Layout>
   <Navbar />
-  <main>
-    <Banner />
-    <AboutUs />
-    <Workshops />
-    <Organizers />
-    <Mentors />
-    <Sponsors />
-    <Faqs />
-  </main>
+  <Hero />
+  <AboutUs />
 </Layout>
