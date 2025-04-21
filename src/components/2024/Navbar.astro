@@ -1,12 +1,12 @@
 ---
 import { Image } from "astro:assets"
 
-import header from "../assets/images/header.png"
+import header from "../../assets/images/header.png"
 ---
 
 <nav class="bg-black fixed w-full z-20 top-0 left-0 border-b border-white">
   <div class="flex flex-wrap items-center justify-between p-3 md:px-4">
-    <a href="/#" aria-current="page">
+    <a href="/2024" aria-current="page">
       <Image src={header} alt="Build with AI Logo" width="196" />
     </a>
     <div class="flex md:order-2 lg:hidden">
@@ -41,38 +41,33 @@ import header from "../assets/images/header.png"
       <ul
         class="flex flex-col p-4 md:p-0 mt-4 font-medium border md:flex-row md:space-x-4 md:mt-0 md:border-0 bg-black md:bg-black border-gray text-white"
       >
-
-        <li class="flex justify-center items-center">
-          <a href="/2024" class="block py-1 px-4">Build With AI 2024</a>
-        </li>
-
         <li class="flex justify-center items-center">
           <a href="/" class="block py-1 px-4">Build With AI 2025</a>
         </li>
 
-        <li class="flex justify-center items-center">
-          <a href="/#ganadores" class="block py-1 px-4">Ganadores</a>
-        </li>
+        <!-- <li class="flex justify-center items-center">
+          <a href="/2024/#ganadores" class="block py-1 px-4">Ganadores</a>
+        </li> -->
 
-        <li class="flex justify-center items-center">
+        <!-- <li class="flex justify-center items-center">
           <a href="/#opiniones" class="block py-1 px-4">Opiniones</a>
-        </li>
+        </li> -->
 
-        <li class="flex justify-center items-center">
+        <!-- <li class="flex justify-center items-center">
           <a href="/#sponsors" class="block py-1 px-4">Sponsors</a>
-        </li>
+        </li> -->
 
-        <li class="flex justify-center items-center">
+        <!-- <li class="flex justify-center items-center">
           <a href="/#organizadores" class="block py-1 px-4">Equipo</a>
-        </li>
+        </li> -->
 
-        <li class="flex justify-center items-center">
+        <!-- <li class="flex justify-center items-center">
           <a href="/faqs" class="block py-1 px-4">Preguntas frecuentes</a>
-        </li>
+        </li> -->
 
-        <li class="flex justify-center items-center">
+        <!-- <li class="flex justify-center items-center">
           <a href="/talleres" class="block py-1 px-4">Talleres previos</a>
-        </li>
+        </li> -->
 
         <li class="flex justify-center items-center">
           <a href="playground" class="block py-1 px-4">Playground ✨</a>
