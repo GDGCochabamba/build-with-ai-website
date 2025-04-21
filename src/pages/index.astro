@@ -1,29 +1,17 @@
 ---
 import Layout from 'layouts/Layout.astro';
-import Navbar from 'components/Navbar.astro';
-import Organizers from 'components/organizers/Organizers.astro';
-import Sponsors from "components/sponsors/Sponsors.astro";
-import Summary from 'components/Summary.astro';
-import Winners from 'components/winners/Winners.astro';
-import Reviews from "components/Reviews.astro";
 
 import Hero from 'components/2025/Hero.astro';
 import Navbar2 from 'components/2025/Navbar.astro';
 import AboutUs from '@/components/AboutUs.astro';
-import Banner from '@/components/Banner.astro';
+import Organizers from '@/components/2025/organizers/Organizers.astro';
 ---
 
 <Layout>
-  <Navbar />
+  <Navbar2 />
   <main>
-    <!-- <Banner />
-    <AboutUs />
-    <Summary/>
-    <Winners/>
-    <Organizers />
-    <Sponsors />
-    <Reviews /> -->
     <Hero />
     <AboutUs />
+    <Organizers />
   </main>
 </Layout>
