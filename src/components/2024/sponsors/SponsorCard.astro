@@ -1,0 +1,32 @@
+---
+import { Image } from "astro:assets";
+const { name, logoKey, url } = Astro.props;
+
+import EMI from "../../assets/images/sponsors/emi.png";
+import GAMLP from "../../assets/images/sponsors/gamlp.png";
+import FINUP from "../../assets/images/sponsors/finup.png";
+import ENCORA from "../../assets/images/sponsors/encora.png";
+import DROBOTS from "../../assets/images/sponsors/drobots.png";
+
+const socialIcon = {
+    emi: EMI,
+    gamlp: GAMLP,
+    finup: FINUP,
+    encora: ENCORA,
+    drobots: DROBOTS,
+};
+---
+
+<section class="flex flex-col justify-between gap-8 ">
+    <a href={url} target="_blank" class="flex justify-center items-center h-full cursor-pointer" rel="noopener noreferrer">
+        <Image
+        src={socialIcon[logoKey]}
+        loading="lazy"
+        class="sm:grayscale grayscale-0 hover:grayscale-0 hover:scale-110 transition duration-150"
+        alt="icon"
+    />
+    </a>
+    <section class="text-center font-bold">
+        {name}
+    </section>
+</section>
