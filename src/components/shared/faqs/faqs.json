@@ -10,5 +10,17 @@
     {
         "question": "¿Cómo conformo mi equipo para participar?",
         "answer": "Te recomendamos contar con un equipo de 3 - 5 personas, con diversas habilidades e ideas, para trabajar de manera óptima y aprovechar al máximo esta experiencia."
+    },
+    {
+        "question": "¿El evento tiene algún costo de inscripción?",
+        "answer": "Si, la participación en BuildWith AI contara con un monto de inscripcion de ."
+    },
+    {
+        "question": "¿Habrá premios para los ganadores?",
+        "answer": "Sí, los equipos ganadores recibirán premios emocionantes y reconocimiento por sus logros durante el hackathon."
+    },
+    {
+        "question": "¿Puedo participar si no tengo experiencia en inteligencia artificial?",
+        "answer": "¡Por supuesto! El evento está diseñado para ser inclusivo y educativo, por lo que no necesitas experiencia previa en inteligencia artificial para participar."
     }
 ]

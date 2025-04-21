@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "build-with-ai-bo"
-  }
+    "default": "build-with-ai-bol",
+    "develop": "build-with-ai-bol"
+  },
+  "targets": {},
+  "etags": {}
 }

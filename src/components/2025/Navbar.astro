@@ -4,8 +4,19 @@ import { Image } from "astro:assets"
 import LogoDark from "@/assets/images/logo-build-with-ai-dark-2025.png"
 ---
 
-<nav class="bg-black fixed w-full z-20 top-0 p-4">
-  <a href="/" class="h-4">
+<nav class="bg-black fixed w-full z-20 top-0 p-4 flex justify-between h-20 items-center">
+  <a href="/">
     <Image src={LogoDark} alt="Build with AI Bolivia 2025 logo" height={36} />
   </a>
+  <ul class="hidden md:flex space-x-4 text-white">
+    <li>
+      <a href="/2025" class="hover:text-gray-300 transition-colors duration-300">Build With AI 2025</a>
+    </li>
+    <li>
+      <a href="/faqs" class="hover:text-gray-300 transition-colors duration-300">Preguntas frecuentes</a>
+    </li>
+    <li>
+      <a href="/playground" class="hover:text-gray-300 transition-colors duration-300">Playground ✨</a>
+  </ul>
+
 </nav>
