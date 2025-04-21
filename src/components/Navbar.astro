@@ -4,7 +4,7 @@ import { Image } from "astro:assets"
 import header from "../assets/images/header.png"
 ---
 
-<nav class="bg-black fixed w-full z-20 top-0 left-0">
+<nav class="bg-black fixed w-full z-20 top-0 left-0 border-b border-white">
   <div class="flex flex-wrap items-center justify-between p-3 md:px-4">
     <a href="/#" aria-current="page">
       <Image src={header} alt="Build with AI Logo" width="196" />
@@ -39,14 +39,14 @@ import header from "../assets/images/header.png"
       id="navbar-sticky"
     >
       <ul
-        class="flex flex-col p-4 md:p-0 mt-4 font-medium border md:flex-row md:space-x-8 md:mt-0 md:border-0 bg-black md:bg-black border-gray text-white"
+        class="flex flex-col p-4 md:p-0 mt-4 font-medium border md:flex-row md:space-x-4 md:mt-0 md:border-0 bg-black md:bg-black border-gray text-white"
       >
         <li class="flex justify-center items-center">
-          <a href="/talleres" class="block py-1 px-4">Talleres previos</a>
+          <a href="/#ganadores" class="block py-1 px-4">Ganadores</a>
         </li>
 
         <li class="flex justify-center items-center">
-          <a href="/#organizadores" class="block py-1 px-4">Equipo</a>
+          <a href="/#opiniones" class="block py-1 px-4">Opiniones</a>
         </li>
 
         <li class="flex justify-center items-center">
@@ -54,7 +54,15 @@ import header from "../assets/images/header.png"
         </li>
 
         <li class="flex justify-center items-center">
-          <a href="/faqs" class="block py-1 px-4">Faqs</a>
+          <a href="/#organizadores" class="block py-1 px-4">Equipo</a>
+        </li>
+
+        <li class="flex justify-center items-center">
+          <a href="/faqs" class="block py-1 px-4">Preguntas frecuentes</a>
+        </li>
+
+        <li class="flex justify-center items-center">
+          <a href="/talleres" class="block py-1 px-4">Talleres previos</a>
         </li>
 
         <li class="flex justify-center items-center">
