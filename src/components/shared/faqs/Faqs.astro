@@ -9,7 +9,7 @@ import FaqCard from "./FaqCard.astro";
         <h1 class="text-1xl sm:text-xl mx-auto">
             ¿Tienes dudas? ¡Esperamos puedas despejarlas aquí!
         </h1>
-        <section class="flex flex-col">
+        <section class="flex flex-col gap-4">
             {faqs.map((faq) => <FaqCard {...faq} />)}
         </section>
     </section>
