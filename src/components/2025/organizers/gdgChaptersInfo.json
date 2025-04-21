@@ -1,0 +1,136 @@
+[
+  {
+    "name": "La Paz",
+    "url": "https://gdg.community.dev/gdg-la-paz/",
+    "socialNetworks": [
+      {
+        "type": "facebook",
+        "url": "https://www.facebook.com/GDGLaPaz/"
+      },
+      {
+        "type": "instagram",
+        "url": "https://www.instagram.com/gdg.lapaz/"
+      },
+      {
+        "type": "tiktok",
+        "url": "https://www.tiktok.com/@gdg.la.paz"
+      }
+    ]
+  },
+
+  {
+    "name": "Cochabamba",
+    "url": "https://gdg.community.dev/gdg-cochabamba/",
+    "socialNetworks": [
+      {
+        "type": "facebook",
+        "url": "https://www.facebook.com/GDGCochabamba/"
+      },
+      {
+        "type": "instagram",
+        "url": "https://www.instagram.com/gdgcochabamba/"
+      },
+      {
+        "type": "twitter",
+        "url": "https://twitter.com/gdgcochabamba"
+      }
+    ]
+  },
+
+  {
+    "name": "Santa Cruz",
+    "url": "https://gdg.community.dev/gdg-santa-cruz/",
+    "socialNetworks": [
+      {
+        "type": "facebook",
+        "url": "https://www.facebook.com/GDGSantaCruz/"
+      },
+      {
+        "type": "instagram",
+        "url": "https://www.instagram.com/gdg.santacruz/"
+      },
+      {
+        "type": "tiktok",
+        "url": "https://www.tiktok.com/@gdgsantacruz"
+      },
+      {
+        "type": "twitter",
+        "url": "https://twitter.com/gdgsantacruz"
+      }
+    ]
+  },
+
+
+  {
+    "name": "Tarija",
+    "url": "https://gdg.community.dev/gdg-tarija/",
+    "socialNetworks": [
+      {
+        "type": "facebook",
+        "url": "https://www.facebook.com/gdgtarija"
+      },
+      {
+        "type": "instagram",
+        "url": "https://www.instagram.com/gdgtarija/"
+      },
+      {
+        "type": "twitter",
+        "url": "https://twitter.com/gdgtarija"
+      },
+      {
+        "type": "linkedin",
+        "url": "https://www.linkedin.com/company/gdg-tarija/"
+      }
+    ]
+  },
+
+  {
+    "name": "Sucre",
+    "url": "https://gdg.community.dev/gdg-sucre/",
+    "socialNetworks": [
+      {
+        "type": "facebook",
+        "url": "https://www.facebook.com/gdgsucre"
+      },
+      {
+        "type": "instagram",
+        "url": "https://www.instagram.com/gdgsucre/"
+      },
+      {
+        "type": "tiktok",
+        "url": "https://www.tiktok.com/@gdgsucre"
+      },
+      {
+        "type": "twitter",
+        "url": "https://twitter.com/gdg_sucre"
+      },
+      {
+        "type": "linkedin",
+        "url": "https://www.linkedin.com/company/gdgsucre"
+      }
+    ]
+  },
+
+  {
+    "name": "El Alto",
+    "url": "https://gdg.community.dev/gdg-el-alto/",
+    "socialNetworks": [
+      {
+        "type": "facebook",
+        "url": "https://www.facebook.com/gdg.elalto.bo"
+      },
+      {
+        "type": "instagram",
+        "url": "https://www.instagram.com/gdg.elalto/"
+      },
+      {
+        "type": "tiktok",
+        "url": "https://www.tiktok.com/@gdg.elalto"
+      },
+      {
+        "type": "linkedin",
+        "url": "https://www.linkedin.com/company/gdg-el-alto-bolivia"
+      }
+    ]
+  }
+]
