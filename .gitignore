@@ -30,3 +30,9 @@ pnpm-debug.log*
 # VisualStudioCode Patch
 # Ignore all local history of files
 **/.history
+
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+# Ignore all local history of files
+**/.history
