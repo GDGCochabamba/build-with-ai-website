@@ -36,3 +36,4 @@ pnpm-lock.yaml
 yarn.lock
 # Ignore all local history of files
 **/.history
+**/.cache
