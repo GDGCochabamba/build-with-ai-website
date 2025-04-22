@@ -25,3 +25,13 @@ body {
   margin: 0;
   padding: 0;
 }
+
+/* smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
