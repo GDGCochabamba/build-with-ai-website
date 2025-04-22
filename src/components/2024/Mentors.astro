@@ -97,31 +97,35 @@ import { mentors } from '../../data/mentors-2024';
   });
 </script>
 
-<section class="mentors-section px-6 py-20 md:px-10">
-  <h2 class="text-3xl font-bold tracking-tight text-white">Mentors</h2>
-  <div
-    class="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8"
-  >
-    {
-      mentors.map((mentor, index) => (
-        <div class="flex flex-col items-center justify-center lg:flex-col lg:justify-center">
-          <button
-            class="aspect-h-1 aspect-w-1 w-50 overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7 togglePopup"
-            data-mentor-index={index}
-          >
-            <Image
-              src={mentor.img}
-              alt="mentor Photo"
-              loading="lazy"
-              class="h-40 w-40 object-cover object-center group-hover:opacity-75"
-            />
-          </button>
-          <label class="text-xl w-40 mt-4  text-white mb-5">
-            {mentor.name}
-          </label>
-        </div>
-      ))
-    }
+<section id="mentores" class="mentors-section px-6 py-20 md:px-10">
+  <div class="max-w-screen-xl mx-auto">
+    <h2 class="text-3xl font-bold tracking-tight text-white text-center">Mentores</h2>
+    <div
+      class="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8"
+    >
+      {
+        mentors.map((mentor, index) => (
+          <div class="flex flex-col items-center justify-center lg:flex-col lg:justify-center">
+            <button
+              class="aspect-h-1 aspect-w-1 w-50 overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7 togglePopup"
+              data-mentor-index={index}
+            >
+              <Image
+                src={mentor.img}
+                alt="mentor Photo"
+                loading="lazy"
+                class="h-40 w-40 object-cover object-center group-hover:opacity-75"
+                width={160}
+                height={160}
+              />
+            </button>
+            <label class="text-xl w-40 mt-4  text-white mb-5">
+              {mentor.name}
+            </label>
+          </div>
+        ))
+      }
+    </div>
   </div>
 </section>
 
