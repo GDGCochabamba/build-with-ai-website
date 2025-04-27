@@ -5,7 +5,6 @@ interface Review {
   comment: string;
   rating: number;
   date: string;
-  avatar?: string;
 }
 
 const reviews: Review[] = [
@@ -15,7 +14,6 @@ const reviews: Review[] = [
       "El hackathon fue una experiencia increíble. Aprendí mucho sobre IA y conocí gente muy talentosa.",
     rating: 5,
     date: "2024-03-15",
-    avatar: "/avatars/carlos.jpg",
   },
   {
     name: "Ana María Flores",
@@ -23,7 +21,6 @@ const reviews: Review[] = [
       "Mi primer hackathon y fue espectacular. Los mentores fueron muy útiles para desarrollar nuestra idea con IA.",
     rating: 5,
     date: "2024-03-15",
-    avatar: "/avatars/ana.jpg",
   },
   {
     name: "José Luis Rojas",
@@ -31,7 +28,6 @@ const reviews: Review[] = [
       "Excelente organización. Las charlas sobre IA fueron muy informativas y las herramientas proporcionadas muy útiles.",
     rating: 4,
     date: "2024-03-14",
-    avatar: "/avatars/jose.jpg",
   },
   {
     name: "Patricia Mendoza",
@@ -39,7 +35,6 @@ const reviews: Review[] = [
       "Fue intenso pero valió la pena. Logramos crear un proyecto innovador usando IA en solo 48 horas.",
     rating: 5,
     date: "2024-03-14",
-    avatar: "/avatars/patricia.jpg",
   },
   {
     name: "Roberto Candia",
@@ -47,7 +42,6 @@ const reviews: Review[] = [
       "Gran ambiente de colaboración. Aprendí muchísimo sobre las nuevas tecnologías de IA.",
     rating: 4,
     date: "2024-03-13",
-    avatar: "/avatars/roberto.jpg",
   },
   {
     name: "María Elena Vargas",
@@ -55,7 +49,6 @@ const reviews: Review[] = [
       "Una experiencia única. Los workshops de IA fueron muy prácticos y el networking excepcional.",
     rating: 5,
     date: "2024-03-13",
-    avatar: "/avatars/maria.jpg",
   },
   {
     name: "Fernando Paz",
@@ -63,7 +56,6 @@ const reviews: Review[] = [
       "El mejor evento de tecnología al que he asistido. Grandes proyectos de IA presentados.",
     rating: 5,
     date: "2024-03-12",
-    avatar: "/avatars/fernando.jpg",
   },
   {
     name: "Carmen Suárez",
@@ -71,7 +63,6 @@ const reviews: Review[] = [
       "Superó mis expectativas. Excelente oportunidad para aprender sobre IA y emprendimiento.",
     rating: 5,
     date: "2024-03-12",
-    avatar: "/avatars/carmen.jpg",
   },
 ];
 ---
@@ -88,13 +79,6 @@ const reviews: Review[] = [
       reviews.map((review) => (
         <div class="bg-white p-6 rounded-lg shadow-md">
           <div class="flex items-center mb-4">
-            {review.avatar && (
-              <img
-                src={review.avatar}
-                alt={`${review.name}'s avatar`}
-                class="w-12 h-12 rounded-full mr-4"
-              />
-            )}
             <div>
               <h3 class="font-semibold">{review.name}</h3>
               <p class="text-sm text-gray-600">{review.date}</p>
