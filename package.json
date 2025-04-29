@@ -10,7 +10,7 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/tailwind": "^5.1.0",
+    "@astrojs/tailwind": "^6.0.2",
     "astro": "5.7",
     "atropos": "^2.0.2",
     "swiper": "^11.2.6",
