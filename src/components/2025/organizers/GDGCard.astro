@@ -1,0 +1,68 @@
+---
+import { Image } from "astro:assets"
+import GDGLogo2025 from "../../../assets/icons/gdg.logo.2025.svg"
+
+import Facebook from "../../../assets/icons/Facebook.svg"
+import Instagram from "../../../assets/icons/Instagram.svg"
+import Twitter from "../../../assets/icons/Twitter.svg"
+import TikTok from "../../../assets/icons/Tiktok.svg"
+import Linkedin from "../../../assets/icons/Linkedin.svg"
+
+const socialIcon = {
+  facebook: Facebook,
+  instagram: Instagram,
+  tiktok: TikTok,
+  twitter: Twitter,
+  linkedin: Linkedin,
+}
+
+const { url, name, socialNetworks } = Astro.props
+---
+
+<div class="w-2/3 sm:w-1/3">
+  <div class="my-5 mx-1 md:m-8 flex flex-col items-center space-y-4 border border-[#E6E6E6] py-10 rounded-2xl">
+    <a href={url} target="_blank" rel="noopener noreferrer">
+      <div class="atropos gdg-card">
+        <div class="atropos-scale">
+          <div class="atropos-rotate">
+            <div class="atropos-inner">
+              <div class="flex flex-col items-start">
+                <Image src={GDGLogo2025} alt="GDG logo" data-atropos-offset="-1" />
+                <span class="pl-1 py-2 text-lg text-blue-500 text-left sm:text-xl" data-atropos-offset="4">
+                  {name}
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </a>
+
+    <div class="inline-flex space-x-5">
+      {
+        socialNetworks?.map(({ type, url }) => (
+          <a href={url} target="_blank" rel="noopener noreferrer">
+            <Image
+              src={socialIcon[type]}
+              class="w-6 sm:h-6 opacity-80 hover:opacity-100 transition-opacity"
+              alt="icon"
+            />
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</div>
+
+<script>
+  import "atropos/css"
+  import Atropos from "atropos"
+
+  document.querySelectorAll(".gdg-card").forEach(element => {
+    Atropos({
+      el: element,
+      shadow: false,
+      rotateTouch: "scroll-y",
+    })
+  })
+</script>

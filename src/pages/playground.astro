@@ -1,12 +1,12 @@
 ---
-import Navbar from "components/Navbar.astro"
 import Layout from "../layouts/Layout.astro"
-import StyleTransfer from "../components/StyleTransfer.astro"
+import StyleTransfer from "../components/shared/StyleTransfer.astro"
+import Navbar from "@/components/2025/Navbar.astro"
 ---
 
 <Layout>
-  <Navbar />
   <main>
+    <Navbar/>
     <StyleTransfer />
   </main>
 </Layout>

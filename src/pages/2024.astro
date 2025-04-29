@@ -1,22 +1,24 @@
 ---
-import AboutUs from 'components/AboutUs.astro';
-import Banner from 'components/Banner.astro';
+import Banner from 'components/2024/Banner.astro';
 import Layout from 'layouts/Layout.astro';
-import Navbar from 'components/Navbar.astro';
-import Organizers from 'components/organizers/Organizers.astro';
-import Sponsors from "components/sponsors/Sponsors.astro";
-import Summary from 'components/Summary.astro';
-import Winners from 'components/winners/Winners.astro';
-import Reviews from "components/Reviews.astro";
+import Navbar from 'components/2024/Navbar.astro';
+import Sponsors from "components/2024/sponsors/Sponsors.astro";
+import Summary from 'components/2024/Summary.astro';
+import Winners from 'components/2024/winners/Winners.astro';
+import Reviews from "components/2024/Reviews.astro";
+import Organizers from '@/components/2024/organizers/Organizers.astro';
+import Mentors from '@/components/2024/Mentors.astro';
+import Workshops from '@/components/2024/Workshops.astro';
 ---
 
 <Layout>
   <Navbar />
   <Banner />
-  <AboutUs />
   <Summary/>
   <Winners/>
   <Reviews />
   <Sponsors />
+  <Workshops />
+  <Mentors />
   <Organizers />
 </Layout>

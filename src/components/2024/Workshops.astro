@@ -1,16 +1,16 @@
 ---
 import WorkshopDetail from "./WorkshopDetail.astro"
 
-import angel from "../assets/images/workshops/Angel-Bulnes.jpg"
-import julio from "../assets/images/workshops/Julio-Colque.jpg"
+import angel from "../../assets/images/workshops/Angel-Bulnes.jpg"
+import julio from "../../assets/images/workshops/Julio-Colque.jpg"
 
-import aaron from "../assets/images/workshops/Aaron-Guerrero.jpeg"
-import vanesa from "../assets/images/workshops/Vanesa-Velasquez.png"
-import julioCesar from "../assets/images/workshops/Julio-Cesar-Ruiz.jpg"
+import aaron from "../../assets/images/workshops/Aaron-Guerrero.jpeg"
+import vanesa from "../../assets/images/workshops/Vanesa-Velasquez.png"
+import julioCesar from "../../assets/images/workshops/Julio-Cesar-Ruiz.jpg"
 
-import mauro from "../assets/images/workshops/Mauro-Gomez.jpeg"
-import sandro from "../assets/images/workshops/Sandro-Moreira.png"
-import juanGuillermo from "../assets/images/workshops/Juan-Guillermo.jpeg"
+import mauro from "../../assets/images/workshops/Mauro-Gomez.jpeg"
+import sandro from "../../assets/images/workshops/Sandro-Moreira.png"
+import juanGuillermo from "../../assets/images/workshops/Juan-Guillermo.jpeg"
 
 const workshops = [
   {
@@ -74,9 +74,9 @@ const workshops = [
     id: "3",
     date: "Vie. 26 abril 2024",
     links: [
-      "https://www.facebook.com/gdgtarija/",
-      "https://www.facebook.com/GDGLaPaz/",
-      "https://www.facebook.com/GDGCochabamba/",
+      "https://www.facebook.com/gdgtarija/videos/795178875899995",
+      "https://www.facebook.com/GDGCochabamba/videos/460286436505427",
+      "https://www.facebook.com/gdgsucre/videos/794347232627201",
     ],
     details: [
       {
@@ -105,26 +105,23 @@ const workshops = [
 ]
 ---
 
-<div id="talleres" class="bg-black text-white">
-  <div class="max-w-screen-xl mx-auto px-4 py-8 space-y-4">
-    <h2 class="text-2xl sm:text-3xl font-bold mx-auto">Talleres previos</h2>
-
+<section id="talleres" >
+  <div class="max-w-screen-lg mx-auto px-4 py-8 space-y-4">
+    <h2 class="text-2xl sm:text-3xl font-bold mx-auto text-center">Talleres previos</h2>
     {
       workshops.map(({ id, date, details }) => (
-        <div class="space-y-4">
-          <div class="flex items-center space-x-4 mt-6">
+        <div class="p-4 space-y-4 border-2">
+          <div class="flex items-center justify-between">
             <span class="w-60 md:w-fit text-nowrap font-bold text-lg md:text-2xl">{date}</span>
-            <hr class="w-full border-blue-500" />
             <a
               id={id}
               target="_blank"
               rel="noopener noreferrer"
-              class="text-nowrap text-red-500 hover:bg-red-500 hover:text-black font-semibold border px-1  md:text-lg md:px-2"
+              class="text-nowrap bg-black text-white hover:bg-blue-500 font-semibold border p-1 md:text-lg md:px-2"
             >
               Ver en Facebook
             </a>
           </div>
-
           {details?.map(detail => (
             <WorkshopDetail {...detail} />
           ))}

@@ -1,0 +1,12 @@
+---
+import chaptersInfo from "./gdgChaptersInfo.json"
+
+import GDGCard from "./GDGCard.astro"
+---
+
+<div id="organizadores" class="max-w-screen-xl mx-auto px-4 py-16 space-y-8">
+  <h2 class="text-2xl sm:text-3xl font-bold mx-auto text-center">Comunidades Organizadoras</h2>
+  <div class="flex flex-wrap justify-center">
+    {chaptersInfo.map(info => <GDGCard {...info} />)}
+  </div>
+</div>

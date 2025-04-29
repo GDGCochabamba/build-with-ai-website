@@ -1,0 +1,16 @@
+---
+import sponsors from "./sponsors.json";
+import SponsorCard from "./SponsorCard.astro";
+---
+
+<section id="sponsors" class="bg-black text-white ">
+    <section class="max-w-screen-xl mx-auto px-4 py-16 space-y-8">
+        <h2 class="text-2xl sm:text-3xl font-bold mx-auto text-center">Sponsors</h2>
+        <h1 class="text-1xl sm:text-xl mx-auto text-center">
+            Agradecemos a todas las entidades que ayudaron a llevar a cabo el Build with AI 2024
+        </h1>
+        <section class="grid grid-cols-2 sm:grid-cols-5 gap-12">
+            {sponsors.map((sponsor) => <SponsorCard {...sponsor} />)}
+        </section>
+    </section>
+</section>

@@ -1,13 +1,19 @@
 ---
-import Layout from 'layouts/Layout.astro';
+import Layout from "layouts/Layout.astro";
 
-import Hero from 'components/2025/Hero.astro';
-import Navbar from 'components/2025/Navbar.astro';
-import AboutUs from '@/components/AboutUs.astro';
+import Hero from "components/2025/Hero.astro";
+import Navbar2 from "components/2025/Navbar.astro";
+import AboutUs from "@/components/2025/AboutUs.astro";
+import Organizers from "@/components/2025/organizers/Organizers.astro";
+import Footer from "@/components/2025/Footer.astro";
 ---
 
 <Layout>
-  <Navbar />
-  <Hero />
-  <AboutUs />
+  <Navbar2 />
+  <main>
+    <Hero />
+    <AboutUs />
+    <Organizers />
+  </main>
+  <Footer />
 </Layout>

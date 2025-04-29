@@ -1,13 +1,13 @@
 ---
 import { Image } from "astro:assets"
 
-import header from "../assets/images/header.png"
+import header from "../../assets/images/header.png"
 ---
 
 <nav class="bg-black fixed w-full z-20 top-0 left-0 border-b border-white">
   <div class="flex flex-wrap items-center justify-between p-3 md:px-4">
-    <a href="/#" aria-current="page">
-      <Image src={header} alt="Build with AI Logo" width="196" />
+    <a href="/2024" aria-current="page" class="flex gap-1 items-center text-white text-3xl font-bold">
+      <Image src={header} alt="Build with AI Logo" width="196" /> 2024
     </a>
     <div class="flex md:order-2 lg:hidden">
       <button
@@ -39,34 +39,30 @@ import header from "../assets/images/header.png"
       id="navbar-sticky"
     >
       <ul
-        class="flex flex-col p-4 md:p-0 mt-4 font-medium border md:flex-row md:space-x-4 md:mt-0 md:border-0 bg-black md:bg-black border-gray text-white"
+        class="flex flex-col p-4 md:p-0 mt-4 font-medium border md:flex-row md:space-x-3 md:mt-0 md:border-0 bg-black md:bg-black border-gray text-white"
       >
         <li class="flex justify-center items-center">
-          <a href="/#ganadores" class="block py-1 px-4">Ganadores</a>
+          <a href="/2024/#opiniones" class="block py-1 px-4">Testimonios</a>
         </li>
 
         <li class="flex justify-center items-center">
-          <a href="/#opiniones" class="block py-1 px-4">Opiniones</a>
+          <a href="/2024/#sponsors" class="block py-1 px-4">Sponsors</a>
         </li>
 
         <li class="flex justify-center items-center">
-          <a href="/#sponsors" class="block py-1 px-4">Sponsors</a>
+          <a href="/2024/#talleres" class="block py-1 px-4">Talleres previos</a>
         </li>
 
         <li class="flex justify-center items-center">
-          <a href="/#organizadores" class="block py-1 px-4">Equipo</a>
+          <a href="/2024/#mentores" class="block py-1 px-4">Mentores</a>
         </li>
 
         <li class="flex justify-center items-center">
-          <a href="/faqs" class="block py-1 px-4">Preguntas frecuentes</a>
+          <a href="/playground" class="block py-1 px-4">Playground</a>
         </li>
 
         <li class="flex justify-center items-center">
-          <a href="/talleres" class="block py-1 px-4">Talleres previos</a>
-        </li>
-
-        <li class="flex justify-center items-center">
-          <a href="playground" class="block py-1 px-4">Playground ✨</a>
+          <a href="/" class="block py-1 px-4">Build With AI 2025</a>
         </li>
       </ul>
     </div>
