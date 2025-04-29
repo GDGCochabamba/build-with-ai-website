@@ -15,54 +15,63 @@ import Distance from "@/assets/icons/distance.svg"
 ---
 
 <main class="relative flex flex-col items-center mt-16 gap-8 lg:gap-12 bg-[url('./Background-2025.png')] bg-repeat-x">
-  <div class="absolute inset-0 hidden lg:block h-full w-full max-w-screen-2xl mx-auto">
-    <Brackets class="absolute top-16 left-16"/>
-    <Hash class="absolute top-12 right-20"/>
-    <Times class="absolute bottom-1/2 left-4"/>
-    <CPU class="absolute top-1/3 right-4"/>
-    <Atom class="absolute bottom-1/4 left-16"/>
-    <AngleBrackets  class="absolute bottom-1/4 right-16"/>
-  </div>
+  <!-- Contenedor centrado para todo el contenido -->
+  <div class="relative w-full max-w-screen-2xl mx-auto px-4">
 
-  <Image
-    src={Logo}
-    alt="Build with AI Bolivia 2025 logo"
-    width={400}
-    class="mt-16 w-2/3 md:w-1/3 lg:w-fit"
-  />
-  <p class="text-3xl lg:text-4xl text-center font-bold px-4 max-w-screen-md leading-tight">
-    Sé parte del <span class="relative mr-1">
-      <span class="bg-blue-500 rotate-2 absolute inset-0"></span>
-      <span class="relative text-white pl-2">hackatón</span>
-    </span> de Inteligencia Artificial más importante de Bolivia
-  </p>
-  <p class="px-8 text-xl md:text-2xl text-center max-w-screen-sm">
-    Demuestra tu destreza y crea el futuro junto a otros apasionados por la tecnología
-  </p>
-  <div class="flex gap-8">
-    <a
-      href="https://b.link/RegistroBuildWithAI25"
-      target="_blank"
-      class="text-lg font-medium rounded-full bg-blue-500 p-4 px-8 text-white inline-block text-center hover:bg-blue-600 transition"
-    >
-      Inscribirme
-    </a>
-    <a 
-      href="https://b.link/BuildWithAIHackathon25"
-      target="_blank"
-      class="text-lg font-medium rounded-full bg-with p-4 px-8 text-blue-500 inline-block text-center border-2 hover:bg-with transition"
-    >
-    Convocatoria
-    </a>
-  </div>
-  <div
-    class="grid grid-cols-1 md:grid-cols-2 font-bold text-2xl divide-y-2 md:divide-y-0 md:divide-x-2"
-  >
-    <div class="flex items-center gap-2 w-full justify-center py-2 md:py-0 md:px-8">
-      <Calendar width={32} height={32} /> 27 - 29 Junio
+    <!-- Íconos decorativos visibles solo en pantallas grandes -->
+    <div class="hidden lg:block">
+      <Brackets class="absolute top-16 left-16" />
+      <Hash class="absolute top-12 right-20" />
+      <Times class="absolute bottom-1/2 left-4" />
+      <CPU class="absolute top-1/3 right-4" />
+      <Atom class="absolute bottom-1/4 left-16" />
+      <AngleBrackets class="absolute bottom-1/4 right-16" />
     </div>
-    <div class="flex items-center gap-2 w-full justify-center py-2 md:py-0 md:px-8">
-      <Distance width={32} height={32} /> Santa Cruz
+
+    <div class="flex flex-col items-center gap-8 lg:gap-12">
+      <Image
+        src={Logo}
+        alt="Build with AI Bolivia 2025 logo"
+        width={400}
+        class="mt-16 w-2/3 md:w-1/3 lg:w-fit"
+      />
+
+      <p class="text-3xl lg:text-4xl text-center font-bold px-4 max-w-screen-md leading-tight">
+        Sé parte del <span class="relative mr-1">
+          <span class="bg-blue-500 rotate-2 absolute inset-0"></span>
+          <span class="relative text-white pl-2">hackatón</span>
+        </span> de Inteligencia Artificial más importante de Bolivia
+      </p>
+
+      <p class="px-8 text-xl md:text-2xl text-center max-w-screen-sm">
+        Demuestra tu destreza y crea el futuro junto a otros apasionados por la tecnología
+      </p>
+
+      <div class="flex flex-col md:flex-row gap-4 md:gap-8">
+        <a
+          href="https://b.link/RegistroBuildWithAI25"
+          target="_blank"
+          class="text-lg font-medium rounded-full bg-blue-500 p-4 px-8 text-white inline-block text-center hover:bg-blue-600 transition"
+        >
+          Inscribirme
+        </a>
+        <a 
+          href="https://b.link/BuildWithAIHackathon25"
+          target="_blank"
+          class="text-lg font-medium rounded-full border-2 border-blue-500 p-4 px-8 text-blue-500 inline-block text-center hover:bg-blue-50 transition"
+        >
+          Convocatoria
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 font-bold text-2xl divide-y-2 md:divide-y-0 md:divide-x-2 w-full max-w-screen-md">
+        <div class="flex items-center gap-2 w-full justify-center py-2 md:py-0 md:px-8">
+          <Calendar width={32} height={32} /> 27 - 29 Junio
+        </div>
+        <div class="flex items-center gap-2 w-full justify-center py-2 md:py-0 md:px-8">
+          <Distance width={32} height={32} /> Santa Cruz
+        </div>
+      </div>
     </div>
   </div>
 
