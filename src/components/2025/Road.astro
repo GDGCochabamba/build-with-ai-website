@@ -1,0 +1,54 @@
+---
+// Import city images
+import elAlto from "../../assets/images/road/elalto.svg?url";
+import laPaz from "../../assets/images/road/lapaz.svg?url";
+import tarija from "../../assets/images/road/tarija.svg?url";
+import cocha from "../../assets/images/road/cocha.svg?url";
+import sucre from "../../assets/images/road/sucre.svg?url";
+import santaCruz from "../../assets/images/road/santacruz.svg?url";
+
+const events = [
+  { city: "EL ALTO", date: "10 de Mayo", color: "#FFB800", image: elAlto },
+  { city: "LA PAZ", date: "16 de Mayo", color: "#FF5C00", image: laPaz },
+  { city: "TARIJA", date: "17 de Mayo", color: "#D000FF", image: tarija },
+  { city: "COCHABAMBA", date: "24 de Mayo", color: "#0066FF", image: cocha },
+  { city: "SUCRE", date: "31 de Mayo", color: "#FF0000", image: sucre },
+  {
+    city: "SANTA CRUZ",
+    date: "07 de Junio",
+    color: "#00FF38",
+    image: santaCruz,
+  },
+];
+---
+
+<section class="max-w-7xl mx-auto px-4 py-16">
+  <div class="text-center mb-12">
+    <h2 class="text-4xl font-bold mb-4">Calendario de eventos</h2>
+    <h3 class="text-3xl font-bold mb-4">"Road to Build AI"</h3>
+    <p class="text-lg">
+      Prepárate para crear el futuro junto<br />
+      a otros apasionados por la tecnología
+    </p>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    {
+      events.map(({ city, date, color, image }) => (
+        <div class="relative">
+          <img
+            class="w-full h-64 object-contain rounded-lg "
+            src={image}
+            alt={city}
+          />
+        </div>
+      ))
+    }
+  </div>
+</section>
+
+<style>
+  section {
+    font-family: "Google Sans", sans-serif;
+  }
+</style>
