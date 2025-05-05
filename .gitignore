@@ -1,32 +1,40 @@
-# build output
+# Astro build output
 dist/
-# generated types
 .astro/
 
-# dependencies
+# Node dependencies
 node_modules/
 
-# logs
+# Logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
-
-# environment variables
+# Environment variables
 .env
+.env.local
 .env.production
+.env.development
 
 # macOS-specific files
 .DS_Store
 
-# VisualStudioCode 
-.vscode/*      # Maybe .vscode/**/* instead - see comments
+# Lock files (pick only the one you use)
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+
+# VSCode settings (optional)
+.vscode/
 !.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
 
-# VisualStudioCode Patch
-# Ignore all local history of files
+# VSCode local history
 **/.history
+
+# Cache folders (Astro or build tools)
+**/.cache
+.cache/

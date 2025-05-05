@@ -26,10 +26,12 @@ body {
   padding: 0;
 }
 
-#chainlit-copilot-button {
-  background-color: #310ef1;
+/* smooth scrolling */
+html {
+  scroll-behavior: smooth;
 }
-
-.MuiStack-root .css-2fbwda {
-  display: none;
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }
