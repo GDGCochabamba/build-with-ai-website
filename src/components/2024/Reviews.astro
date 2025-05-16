@@ -3,66 +3,28 @@
 interface Review {
   name: string;
   comment: string;
-  rating: number;
-  date: string;
 }
 
 const reviews: Review[] = [
   {
-    name: "Carlos Montero",
+    name: "Juan Agustín Apaza Guzmán",
     comment:
-      "El hackathon fue una experiencia increíble. Aprendí mucho sobre IA y conocí gente muy talentosa.",
-    rating: 5,
-    date: "2024-03-15",
+      "Nunca pensé que nuestra idea llegaría tan lejos. Entré sin saber programar, pero descubrí que podía aportar motivación, resiliencia y visión de negocio. La hackatón me mostró un mundo nuevo, lleno de mentores increíbles. Aprendí en equipo y ahora amo la tecnología. Volvería sin dudarlo, fue una experiencia que cambió mi vida.",
   },
   {
-    name: "Ana María Flores",
+    name: "Max Rodas",
     comment:
-      "Mi primer hackathon y fue espectacular. Los mentores fueron muy útiles para desarrollar nuestra idea con IA.",
-    rating: 5,
-    date: "2024-03-15",
+      "Aprendí que no necesitas saberlo todo para crear algo real. La hackatón superó mis expectativas por el apoyo genuino de los mentores. Me lancé con conocimientos básicos y aun así pude aportar gracias a lo que había leído. Fue emocionante y formador. Sin duda volvería, porque cada segundo valió la pena.",
   },
   {
-    name: "José Luis Rojas",
+    name: "Karen Amurrio Huaygua",
     comment:
-      "Excelente organización. Las charlas sobre IA fueron muy informativas y las herramientas proporcionadas muy útiles.",
-    rating: 4,
-    date: "2024-03-14",
+      "Ver mi idea cobrar vida fue emocionante. Me sorprendió la calidez del ambiente y cuánto se aprende trabajando con otros. Todos tenemos algo que aportar, incluso si creemos que no. Más allá de programar, desarrollé habilidades clave en comunicación y trabajo en equipo. Fue una experiencia transformadora y volvería feliz.",
   },
   {
-    name: "Patricia Mendoza",
+    name: "Adriana Paz",
     comment:
-      "Fue intenso pero valió la pena. Logramos crear un proyecto innovador usando IA en solo 48 horas.",
-    rating: 5,
-    date: "2024-03-14",
-  },
-  {
-    name: "Roberto Candia",
-    comment:
-      "Gran ambiente de colaboración. Aprendí muchísimo sobre las nuevas tecnologías de IA.",
-    rating: 4,
-    date: "2024-03-13",
-  },
-  {
-    name: "María Elena Vargas",
-    comment:
-      "Una experiencia única. Los workshops de IA fueron muy prácticos y el networking excepcional.",
-    rating: 5,
-    date: "2024-03-13",
-  },
-  {
-    name: "Fernando Paz",
-    comment:
-      "El mejor evento de tecnología al que he asistido. Grandes proyectos de IA presentados.",
-    rating: 5,
-    date: "2024-03-12",
-  },
-  {
-    name: "Carmen Suárez",
-    comment:
-      "Superó mis expectativas. Excelente oportunidad para aprender sobre IA y emprendimiento.",
-    rating: 5,
-    date: "2024-03-12",
+      "Llegué con dudas y me fui con confianza. Aprendí más en una noche que en meses de clases. Aunque pensamos rendirnos, el equipo y los mentores nos impulsaron. Fue desafiante, pero logramos presentar con orgullo. La organización fue excelente. Sin duda, repetiría la experiencia.",
   },
 ];
 ---
@@ -81,21 +43,10 @@ const reviews: Review[] = [
           <div class="flex items-center mb-4">
             <div>
               <h3 class="font-semibold">{review.name}</h3>
-              <p class="text-sm text-gray-600">{review.date}</p>
             </div>
           </div>
 
-          <div class="flex mb-2">
-            {Array.from({ length: review.rating }).map(() => (
-              <svg
-                class="w-5 h-5 text-yellow-400"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-              </svg>
-            ))}
-          </div>
+        
 
           <p class="text-gray-700">{review.comment}</p>
         </div>
