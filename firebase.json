@@ -5,6 +5,13 @@
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
+    ],
+    "redirects": [
+      {
+        "source": "/mentores",
+        "destination": "https://forms.gle/UPSEjDuDqGWd9peu6",
+        "type": 302
+      }
     ]
   }
 }
