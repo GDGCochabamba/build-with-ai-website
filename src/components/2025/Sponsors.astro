@@ -1,19 +1,29 @@
 ---
+import { Image } from "astro:assets";
+
 // Usamos rutas relativas para las imágenes
+import LogoBCP from "../../assets/images/sponsors_2025/LogoBCP.jpg";
+import CONFIARED from "../../assets/images/sponsors_2025/CONFIARED.svg";
+import CCLogo from "../../assets/images/sponsors_2025/cc_logo.svg";
+import NexusLogo from "../../assets/images/sponsors_2025/logo-nexus.webp";
+
 const sponsors = [
   {
     name: "Banco de Crédito BCP",
-    image: "/src/assets/images/sponsors_2025/LogoBCP.jpg",
+    image: LogoBCP,
   },
   {
     name: "Confiared",
-    image: "/src/assets/images/sponsors_2025/ CONFIARED.svg",
+    image: CONFIARED,
   },
   {
     name: "Creative Commons",
-    image: "/src/assets/images/sponsors_2025/cc_logo.svg",
+    image: CCLogo,
   },
-  { name: "Nexus", image: "/src/assets/images/sponsors_2025/logo-nexus.webp" },
+  { 
+    name: "Nexus", 
+    image: NexusLogo,
+  },
 ];
 ---
 
@@ -35,7 +45,7 @@ const sponsors = [
         sponsors.map((sponsor) => (
           <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 w-full max-w-[200px]">
             <div class="aspect-[3/2] relative flex items-center justify-center">
-              <img
+              <Image
                 src={sponsor.image}
                 alt={sponsor.name}
                 class="w-full h-full object-contain"
