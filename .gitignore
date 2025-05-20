@@ -38,3 +38,6 @@ yarn.lock
 # Cache folders (Astro or build tools)
 **/.cache
 .cache/
+
+.firebase/
+.cache/

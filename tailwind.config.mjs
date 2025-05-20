@@ -14,6 +14,15 @@ export default {
       minHeight: {
         800: '800px',
       },
+      animation: {
+        'reveal': 'reveal 0.5s ease-in-out forwards'
+      },
+      keyframes: {
+        reveal: {
+          '0%': { width: '0%' },
+          '100%': { width: '100%' },
+        },
+      },
     },
   },
   plugins: [],
