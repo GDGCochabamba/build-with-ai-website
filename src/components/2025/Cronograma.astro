@@ -1,0 +1,145 @@
+---
+// Datos del cronograma del evento
+const cronograma = [
+  {
+    dia: "Viernes 27 de Junio",
+    actividades: [
+      {
+        hora: "17:00 - 19:00",
+        actividad: "Registro y acreditación"
+      },
+      {
+        hora: "19:00 - 19:45",
+        actividad: "Inauguracion del evento"
+      },
+      {
+        hora: "19:45 - 21:00",
+        actividad: "Networking inicial"
+      },
+      {
+        hora: "21:00 - 22:00",
+        actividad: "Cena"
+      },
+      {
+        hora: "21:00 - 7:00",
+        actividad: "Trasnoche"
+      }
+    ]
+  },
+  {
+    dia: "Sábado 28 de Junio",
+    actividades: [
+      {
+        hora: "07:00 - 09:00",
+        actividad: "Desayuno y acreditación"
+      },
+      {
+        hora: "09:00 - 3:00",
+        actividad: "Hacking Time"
+      },
+      {
+        hora: "13:00 - 15:00",
+        actividad: "Almuerzo"
+      },
+      {
+        hora: "15:00 - 21:00",
+        actividad: "Hacking Time"
+      },
+      {
+        hora: "18:00 - 19:00",
+        actividad: "Charla general - Preparacion de un Pitch Ganador"
+      },
+      {
+        hora: "19:00 - 21:00",
+        actividad: "Pre-pitch con mentores"
+      },
+      {
+        hora: "21:00 - 23:00",
+        actividad: "Cena y networking"
+      },
+      {
+        hora: "23:00 - 7:00",
+        actividad: "Trasnoche"
+      }
+    ]
+  },
+  {
+    dia: "Domingo 29 de Junio",
+    actividades: [
+      {
+        hora: "07:00 - 09:00",
+        actividad: "Desayuno y acreditacion"
+      },
+      {
+        hora: "09:00 - 3:00",
+        actividad: "Hacking Time Final"
+      },
+      {
+        hora: "13:00 - 14:30",
+        actividad: "Almuerzo"
+      },
+      {
+        hora: "11:00 - 17:00",
+        actividad: "Defensa de proyectos"
+      },
+      {
+        hora: "15:00 - 17:00",
+        actividad: "Preparacion del cierre"
+      },
+      {
+        hora: "17:00 - 18:00",
+        actividad: "Cierre y premiación"
+      }
+    ]
+  }
+];
+---
+
+<section class="py-16 bg-gray-50">
+  <div class="container mx-auto px-4">
+    <!-- Título de la sección -->
+    <div class="text-center mb-16">
+      <h2 class="text-4xl font-bold text-gray-900 mb-4">
+        Cronograma
+      </h2>
+    </div>
+
+    <!-- Grid de días -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+      {cronograma.map((dia, index) => (
+        <div class="bg-white rounded-2xl p-8 shadow-lg">
+          <!-- Encabezado del día -->
+          <div class="text-center mb-8">
+            <h3 class={`text-2xl font-bold mb-6 ${
+              index === 0 ? 'text-blue-600' : 
+              index === 1 ? 'text-blue-600' : 
+              'text-blue-600'
+            }`}>
+              {dia.dia}
+            </h3>
+            
+            <!-- Encabezados de tabla -->
+            <div class="grid grid-cols-2 gap-4 mb-6 pb-3 border-b border-gray-200">
+              <div class="text-lg font-semibold text-gray-900 text-left">Hora</div>
+              <div class="text-lg font-semibold text-gray-900 text-left">Actividad</div>
+            </div>
+          </div>
+
+          <!-- Lista de actividades -->
+          <div class="space-y-4">
+            {dia.actividades.map((actividad) => (
+              <div class="grid grid-cols-2 gap-4 py-3 border-b border-gray-100 last:border-b-0">
+                <div class="text-sm font-medium text-gray-700">
+                  {actividad.hora}
+                </div>
+                <div class="text-sm text-gray-900">
+                  {actividad.actividad}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
