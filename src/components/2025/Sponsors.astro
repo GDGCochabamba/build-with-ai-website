@@ -1,5 +1,57 @@
 ---
-
+// Usamos rutas relativas para las imágenes
+const sponsors = [
+  {
+    name: "Banco de Crédito BCP",
+    image: "/src/assets/images/sponsors_2025/LogoBCP.jpg",
+    socialLinks: [
+      { icon: "/src/assets/icons/Facebook.svg", url: "#" },
+      { icon: "/src/assets/icons/Instagram.svg", url: "#" },
+      { icon: "/src/assets/icons/Tiktok.svg", url: "#" },
+      { icon: "/src/assets/icons/Twitter.svg", url: "#" },
+    ],
+  },
+  {
+    name: "Delve",
+    image: "/src/assets/images/sponsors_2025/delve_black.png",
+    socialLinks: [
+      { icon: "/src/assets/icons/Facebook.svg", url: "#" },
+      { icon: "/src/assets/icons/Instagram.svg", url: "#" },
+      { icon: "/src/assets/icons/Tiktok.svg", url: "#" },
+      { icon: "/src/assets/icons/Twitter.svg", url: "#" },
+    ],
+  },
+  {
+    name: "Confiared",
+    image: "/src/assets/images/sponsors_2025/confiared.svg",
+    socialLinks: [
+      { icon: "/src/assets/icons/Facebook.svg", url: "#" },
+      { icon: "/src/assets/icons/Instagram.svg", url: "#" },
+      { icon: "/src/assets/icons/Tiktok.svg", url: "#" },
+      { icon: "/src/assets/icons/Twitter.svg", url: "#" },
+    ],
+  },
+  {
+    name: "Creative Commons",
+    image: "/src/assets/images/sponsors_2025/cc_logo.svg",
+    socialLinks: [
+      { icon: "/src/assets/icons/Facebook.svg", url: "#" },
+      { icon: "/src/assets/icons/Instagram.svg", url: "#" },
+      { icon: "/src/assets/icons/Tiktok.svg", url: "#" },
+      { icon: "/src/assets/icons/Twitter.svg", url: "#" },
+    ],
+  },
+  {
+    name: "Nexus",
+    image: "/src/assets/images/sponsors_2025/logo-nexus.webp",
+    socialLinks: [
+      { icon: "/src/assets/icons/Facebook.svg", url: "#" },
+      { icon: "/src/assets/icons/Instagram.svg", url: "#" },
+      { icon: "/src/assets/icons/Tiktok.svg", url: "#" },
+      { icon: "/src/assets/icons/Twitter.svg", url: "#" },
+    ],
+  },
+];
 ---
 
 <section class="py-16 bg-gray-50">
@@ -16,57 +68,38 @@
     <div
       class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 items-center justify-items-center"
     >
-      <!-- Sponsor 1 -->
-      <div
-        class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 w-full max-w-[200px]"
-      >
-        <div class="aspect-[3/2] relative flex items-center justify-center">
-          <div
-            class="w-full h-full flex items-center justify-center bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg"
-          >
-            <span class="text-2xl font-bold text-white">Sponsor1</span>
-          </div>
-        </div>
-      </div>
+      {
+        sponsors.map((sponsor) => (
+          <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 w-full max-w-[200px]">
+            {/* Logo del sponsor */}
+            <div class="aspect-[3/2] relative flex items-center justify-center mb-4">
+              <img
+                src={sponsor.image}
+                alt={sponsor.name}
+                class="w-full h-full object-contain"
+              />
+            </div>
 
-      <!-- Sponsor 2 -->
-      <div
-        class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 w-full max-w-[200px]"
-      >
-        <div class="aspect-[3/2] relative flex items-center justify-center">
-          <div
-            class="w-full h-full flex items-center justify-center bg-gradient-to-r from-green-500 to-teal-500 rounded-lg"
-          >
-            <span class="text-2xl font-bold text-white">Sponsor2</span>
+            {/* Iconos de redes sociales */}
+            <div class="flex justify-center space-x-3">
+              {sponsor.socialLinks.map((social, index) => (
+                <a
+                  href={social.url}
+                  class="w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 transition-colors duration-200"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src={social.icon}
+                    alt={`Social ${index + 1}`}
+                    class="w-5 h-5 opacity-70 hover:opacity-100 transition-opacity duration-200"
+                  />
+                </a>
+              ))}
+            </div>
           </div>
-        </div>
-      </div>
-
-      <!-- Sponsor 3 -->
-      <div
-        class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 w-full max-w-[200px]"
-      >
-        <div class="aspect-[3/2] relative flex items-center justify-center">
-          <div
-            class="w-full h-full flex items-center justify-center bg-gradient-to-r from-red-500 to-orange-500 rounded-lg"
-          >
-            <span class="text-2xl font-bold text-white">Sponsor3</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Sponsor 4 -->
-      <div
-        class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 w-full max-w-[200px]"
-      >
-        <div class="aspect-[3/2] relative flex items-center justify-center">
-          <div
-            class="w-full h-full flex items-center justify-center bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg"
-          >
-            <span class="text-2xl font-bold text-white">Sponsor4</span>
-          </div>
-        </div>
-      </div>
+        ))
+      }
     </div>
   </div>
 </section>

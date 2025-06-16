@@ -5,6 +5,23 @@
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
+    ],
+    "redirects": [
+      {
+        "source": "/mentores",
+        "destination": "https://forms.gle/UPSEjDuDqGWd9peu6",
+        "type": 302
+      },
+      {
+        "source": "/startup",
+        "destination": "https://forms.gle/ZwQ756t3m3U2VfvS8",
+        "type": 302
+      },
+      {
+        "source": "/startups",
+        "destination": "https://forms.gle/ZwQ756t3m3U2VfvS8",
+        "type": 302
+      }
     ]
   }
 }

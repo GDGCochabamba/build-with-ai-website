@@ -8,40 +8,40 @@ import sucre from "../../assets/images/road/sucre.svg?url";
 import santaCruz from "../../assets/images/road/santacruz.svg?url";
 
 const events = [
-  { city: "EL ALTO", date: "10 de Mayo", color: "#FFB800", image: elAlto },
-  { city: "LA PAZ", date: "16 de Mayo", color: "#FF5C00", image: laPaz },
-  { city: "TARIJA", date: "17 de Mayo", color: "#D000FF", image: tarija },
-  { city: "COCHABAMBA", date: "24 de Mayo", color: "#0066FF", image: cocha },
-  { city: "SUCRE", date: "31 de Mayo", color: "#FF0000", image: sucre },
+  { city: "EL ALTO", date: "10 de Mayo", image: elAlto },
+  { city: "LA PAZ", date: "16 de Mayo", image: laPaz },
+  { city: "TARIJA", date: "17 de Mayo", image: tarija, url: 'https://gdgtarija.com/tutorial/build/' },
+  { city: "COCHABAMBA", date: "24 de Mayo", image: cocha, url: 'https://gdg.com.bo' },
+  { city: "SUCRE", date: "31 de Mayo", image: sucre, url: 'https://b.link/RoadToBwAISucre' },
   {
     city: "SANTA CRUZ",
     date: "07 de Junio",
-    color: "#00FF38",
     image: santaCruz,
+    url:'https://gdg.community.dev/e/mjepzu/'
   },
 ];
 ---
 
 <section class="max-w-7xl mx-auto px-4 py-16">
   <div class="text-center mb-12">
-    <h2 class="text-4xl font-bold mb-4">Calendario de eventos</h2>
-    <h3 class="text-3xl font-bold mb-4">"Road to Build AI"</h3>
+
+    <h2 class="text-3xl font-bold mb-4">Road to Build with AI</h2>
     <p class="text-lg">
-      Prepárate para crear el futuro junto<br />
-      a otros apasionados por la tecnología
+      Prepárate para la hackatón nacional con nuestros eventos previos en cada ciudad.
     </p>
   </div>
 
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mx-8">
     {
-      events.map(({ city, date, color, image }) => (
-        <div class="relative">
+      events.map(({ city, date, color, image, url }) => (
+        <a href={url} target="_blank" rel="noopener noreferrer">
           <img
             class="w-full h-64 object-contain rounded-lg "
             src={image}
             alt={city}
+            width="256"
           />
-        </div>
+        </a>
       ))
     }
   </div>
