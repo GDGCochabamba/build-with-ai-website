@@ -1,47 +1,50 @@
 ---
-import { Image } from 'astro:assets';
-import { mentors } from '../../data/mentors-2025';
+import { Image } from "astro:assets"
+import { mentors } from "../../data/mentors-2025"
+
+const visibleMentors = 6
 ---
 
 <script>
-  import { mentors } from 'data/mentors-2025';
+  import { mentors } from "data/mentors-2025"
 
-  let popupOpen = false;
+  let popupOpen = false
+  let viewMore = false
 
   function showPopup(mentor) {
-    if (popupOpen) return;
+    if (popupOpen) return
 
-    const backdrop = document.createElement('div')
-    backdrop.classList.add('fixed', 'inset-0', 'bg-black/60', 'z-20')
-    backdrop.setAttribute('id', 'mentorBackdrop')
+    const backdrop = document.createElement("div")
+    backdrop.classList.add("fixed", "inset-0", "bg-black/60", "z-20")
+    backdrop.setAttribute("id", "mentorBackdrop")
 
-    const popup = document.createElement('div');
+    const popup = document.createElement("div")
     popup.classList.add(
-      'fixed',
-      'top-1/2',
-      'left-12',
-      'sm:left-1/2',
-      '-translate-x-6',
-      'sm:-translate-x-1/2',
-      '-translate-y-1/2',
-      'bg-white',
-      'p-6',
-      'border',
-      'border-gray-300',
-      'rounded-lg',
-      'shadow-lg',
-      'min-w-0',
-      'max-w-full',
-      'min-h-0',
-      'max-h-lg',
-      'overflow-auto',
-      'z-30',
-    );
-    popup.setAttribute('id', 'mentorPopupContainer');
+      "fixed",
+      "top-1/2",
+      "left-12",
+      "sm:left-1/2",
+      "-translate-x-6",
+      "sm:-translate-x-1/2",
+      "-translate-y-1/2",
+      "bg-white",
+      "p-6",
+      "border",
+      "border-gray-300",
+      "rounded-lg",
+      "shadow-lg",
+      "min-w-0",
+      "max-w-full",
+      "min-h-0",
+      "max-h-lg",
+      "overflow-auto",
+      "z-30"
+    )
+    popup.setAttribute("id", "mentorPopupContainer")
 
     const socialLinks = mentor.social
       .map(
-        (socialItem) => `
+        socialItem => `
       <a href="${socialItem.src}" target="_blank" rel="noopener noreferrer">
         <Image
           class="h-5 w-5 lg:h-6 lg:w-6"
@@ -49,9 +52,9 @@ import { mentors } from '../../data/mentors-2025';
           alt="Social Media logo"
         />
       </a>
-    `,
+    `
       )
-      .join('');
+      .join("")
 
     const popupContent = `
       <div class="relative" id="mentorPopup">
@@ -59,90 +62,111 @@ import { mentors } from '../../data/mentors-2025';
           <Image src="${mentor.img.src}" alt="mentor Photo" loading="lazy" class="object-cover w-44 h-44 rounded-lg" />
           <div>
             <h2 class="text-lg font-semibold">${mentor.name}</h2>
-            <p class="text-sm text-gray-700 mb-2">${mentor.bio || 'No bio available.'}</p>
+            <p class="text-sm text-gray-700 mb-2">${mentor.bio || "No bio available."}</p>
             <div class="flex items-center space-x-2">
               ${socialLinks}
             </div>
           </div>
         </div>
       </div>
-    `;
+    `
 
-    popup.innerHTML = popupContent;
-    document.body.appendChild(backdrop);
-    document.body.appendChild(popup);
-    document.addEventListener('click', handleOutsideClick);
-    popupOpen = true;
-    document.body.classList.add('overflow-hidden');
+    popup.innerHTML = popupContent
+    document.body.appendChild(backdrop)
+    document.body.appendChild(popup)
+    document.addEventListener("click", handleOutsideClick)
+    popupOpen = true
+    document.body.classList.add("overflow-hidden")
   }
 
   function closePopup() {
-    const popup = document.getElementById('mentorPopupContainer');
-    const backdrop = document.getElementById('mentorBackdrop');
-    backdrop.remove();
-    popup.remove();
-    document.removeEventListener('click', handleOutsideClick);
-    popupOpen = false;
-    document.body.classList.remove('overflow-hidden');
+    const popup = document.getElementById("mentorPopupContainer")
+    const backdrop = document.getElementById("mentorBackdrop")
+    backdrop.remove()
+    popup.remove()
+    document.removeEventListener("click", handleOutsideClick)
+    popupOpen = false
+    document.body.classList.remove("overflow-hidden")
   }
 
   function handleOutsideClick(event) {
-    const popup = document.getElementById('mentorPopup');
+    const popup = document.getElementById("mentorPopup")
     if (!popup.contains(event.target)) {
-      closePopup();
+      closePopup()
     }
   }
 
-  const buttons = document.querySelectorAll('button.togglePopup');
-  buttons.forEach((button) => {
-    button.addEventListener('click', (event) => {
-      event.stopPropagation();
-      const mentorIndex = parseInt(
-        (button as HTMLElement).dataset.mentorIndex,
-        10,
-      );
-      const mentor = mentors[mentorIndex];
-      showPopup(mentor);
-    });
-  });
+  const buttons = document.querySelectorAll("button.togglePopup")
+  buttons.forEach(button => {
+    button.addEventListener("click", event => {
+      event.stopPropagation()
+      const mentorIndex = parseInt((button as HTMLElement).dataset.mentorIndex, 10)
+      const mentor = mentors[mentorIndex]
+      showPopup(mentor)
+    })
+  })
+
+  const button = document.getElementById("viewMoreBtn")
+  const cards = document.querySelectorAll(".mentor-card")
+
+  button.addEventListener("click", () => {
+    viewMore = !viewMore
+
+    if (viewMore) {
+      cards.forEach(card => card.classList.remove("hidden"))
+    } else {
+      cards.forEach((card, index) => {
+        if (index >= 6) {
+          card.classList.add("hidden")
+        }
+      })
+    }
+
+    button.textContent = viewMore ? "Ver menos" : "Ver más"
+  })
 </script>
 
-<section id="mentores" class="mentors-section p-6 lg:py-20 md:px-10">
-  <div class="max-w-screen-xl mx-auto">
+<section id="mentores" class="bg-[#1e1e1e] p-4 md:py-8 xl:py-20 md:px-10">
+  <div class="max-w-screen-2xl mx-auto">
     <h2 class="text-3xl font-bold tracking-tight text-white text-center">Mentores</h2>
     <div
-      class="mt-6 grid grid-cols-2 items-start gap-x-8 gap-y-4 md:gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8"
+      class="mt-6 grid grid-cols-2 items-start gap-x-8 gap-y-4 md:gap-y-10 sm:grid-cols-3 xl:grid-cols-6 xl:gap-x-8"
+      id="mentors-grid"
     >
       {
         mentors.map((mentor, index) => (
-          <div class="flex flex-col items-center justify-center lg:flex-col lg:justify-center">
+          <div
+            class={`mentor-card flex flex-col items-center justify-center lg:flex-col lg:justify-center hover:scale-110 transition-all ${index >= visibleMentors && "hidden"}`}
+            data-index={index}
+          >
             <button
-              class="w-40 h-40 overflow-hidden clip-hexagon bg-gray-200 togglePopup transform rotate-[30deg]" 
+              class="togglePopup w-40 h-40 lg:h-44 lg:w-44 overflow-hidden clip-hexagon bg-gray-200"
               data-mentor-index={index}
             >
               <Image
                 src={mentor.img}
-                alt="mentor Photo"
+                alt={mentor.name}
                 loading="lazy"
-                class="h-40 w-40 object-cover object-center group-hover:opacity-75 transform -rotate-[30deg]"
-                width={160}
-                height={160}
+                class="h-40 w-40 object-cover object-center group-hover:opacity-75 transform lg:h-44 lg:w-44"
+                width={320}
+                height={320}
               />
             </button>
-            <div class="bg-blue-500 px-6 py-2 mt-4">
-              <label class="text-lg md:text-xl w-40 mt-4 text-center text-white mb-5">
-                {mentor.name}
-              </label>
+            <div class="bg-blue-500 p-2 md:px-4 mt-4 min-w-40  text-center">
+              <label class="text-base md:text-xl  mt-4 text-white mb-4">{mentor.name}</label>
             </div>
           </div>
         ))
       }
     </div>
+
+    <div class="mt-6 text-center">
+      <button
+        id="viewMoreBtn"
+        class="px-4 py-2 border-2 font-medium text-blue-500 border-blue-500 rounded hover:text-blue-400 hover:border-blue-400 transition"
+      >
+        Ver más
+      </button>
+    </div>
   </div>
 </section>
-
-<style>
-  .mentors-section {
-    background: #0e0d0d;
-  }
-</style>
