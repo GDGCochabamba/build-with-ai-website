@@ -1,54 +1,65 @@
 ---
+// src/data/sponsors.js o donde tengas la definición
+import LogoBCP from "@/assets/images/sponsors_2025/LogoBCP.jpg";
+import DelveLogo from "@/assets/images/sponsors_2025/delve_black.png";
+import ConfiaredLogo from "@/assets/images/sponsors_2025/confiared.svg";
+import CCLogo from "@/assets/images/sponsors_2025/cc_logo.svg";
+import NexusLogo from "@/assets/images/sponsors_2025/logo-nexus.webp";
+
+import FacebookIcon from "@/assets/icons/Facebook.svg";
+import InstagramIcon from "@/assets/icons/Instagram.svg";
+import TiktokIcon from "@/assets/icons/Tiktok.svg";
+import TwitterIcon from "@/assets/icons/Twitter.svg";
 // Usamos rutas relativas para las imágenes
 const sponsors = [
   {
     name: "Banco de Crédito BCP",
-    image: "/src/assets/images/sponsors_2025/LogoBCP.jpg",
+    image: LogoBCP,
     socialLinks: [
-      { icon: "/src/assets/icons/Facebook.svg", url: "#" },
-      { icon: "/src/assets/icons/Instagram.svg", url: "#" },
-      { icon: "/src/assets/icons/Tiktok.svg", url: "#" },
-      { icon: "/src/assets/icons/Twitter.svg", url: "#" },
+      { icon: FacebookIcon, url: "#" },
+      { icon: InstagramIcon, url: "#" },
+      { icon: TiktokIcon, url: "#" },
+      { icon: TwitterIcon, url: "#" },
     ],
   },
   {
     name: "Delve",
-    image: "/src/assets/images/sponsors_2025/delve_black.png",
+    image: DelveLogo,
     socialLinks: [
-      { icon: "/src/assets/icons/Facebook.svg", url: "#" },
-      { icon: "/src/assets/icons/Instagram.svg", url: "#" },
-      { icon: "/src/assets/icons/Tiktok.svg", url: "#" },
-      { icon: "/src/assets/icons/Twitter.svg", url: "#" },
+      { icon: FacebookIcon, url: "#" },
+      { icon: InstagramIcon, url: "#" },
+      { icon: TiktokIcon, url: "#" },
+      { icon: TwitterIcon, url: "#" },
     ],
   },
   {
     name: "Confiared",
-    image: "/src/assets/images/sponsors_2025/confiared.svg",
+    image: ConfiaredLogo,
     socialLinks: [
-      { icon: "/src/assets/icons/Facebook.svg", url: "#" },
-      { icon: "/src/assets/icons/Instagram.svg", url: "#" },
-      { icon: "/src/assets/icons/Tiktok.svg", url: "#" },
-      { icon: "/src/assets/icons/Twitter.svg", url: "#" },
+      { icon: FacebookIcon, url: "#" },
+      { icon: InstagramIcon, url: "#" },
+      { icon: TiktokIcon, url: "#" },
+      { icon: TwitterIcon, url: "#" },
     ],
   },
   {
     name: "Creative Commons",
-    image: "/src/assets/images/sponsors_2025/cc_logo.svg",
+    image: CCLogo,
     socialLinks: [
-      { icon: "/src/assets/icons/Facebook.svg", url: "#" },
-      { icon: "/src/assets/icons/Instagram.svg", url: "#" },
-      { icon: "/src/assets/icons/Tiktok.svg", url: "#" },
-      { icon: "/src/assets/icons/Twitter.svg", url: "#" },
+      { icon: FacebookIcon, url: "#" },
+      { icon: InstagramIcon, url: "#" },
+      { icon: TiktokIcon, url: "#" },
+      { icon: TwitterIcon, url: "#" },
     ],
   },
   {
     name: "Nexus",
-    image: "/src/assets/images/sponsors_2025/logo-nexus.webp",
+    image: NexusLogo,
     socialLinks: [
-      { icon: "/src/assets/icons/Facebook.svg", url: "#" },
-      { icon: "/src/assets/icons/Instagram.svg", url: "#" },
-      { icon: "/src/assets/icons/Tiktok.svg", url: "#" },
-      { icon: "/src/assets/icons/Twitter.svg", url: "#" },
+      { icon: FacebookIcon, url: "#" },
+      { icon: InstagramIcon, url: "#" },
+      { icon: TiktokIcon, url: "#" },
+      { icon: TwitterIcon, url: "#" },
     ],
   },
 ];
@@ -74,7 +85,7 @@ const sponsors = [
             {/* Logo del sponsor */}
             <div class="aspect-[3/2] relative flex items-center justify-center mb-4">
               <img
-                src={sponsor.image}
+                src={sponsor.image.src}
                 alt={sponsor.name}
                 class="w-full h-full object-contain"
               />
@@ -90,7 +101,7 @@ const sponsors = [
                   rel="noopener noreferrer"
                 >
                   <img
-                    src={social.icon}
+                    src={social.icon.src}
                     alt={`Social ${index + 1}`}
                     class="w-5 h-5 opacity-70 hover:opacity-100 transition-opacity duration-200"
                   />
