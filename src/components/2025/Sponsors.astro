@@ -1,19 +1,67 @@
 ---
+// src/data/sponsors.js o donde tengas la definición
+import LogoBCP from "@/assets/images/sponsors_2025/LogoBCP.jpg";
+import DelveLogo from "@/assets/images/sponsors_2025/delve_black.png";
+import ConfiaredLogo from "@/assets/images/sponsors_2025/confiared.svg";
+import CCLogo from "@/assets/images/sponsors_2025/cc_logo.svg";
+import NexusLogo from "@/assets/images/sponsors_2025/logo-nexus.webp";
+
+import FacebookIcon from "@/assets/icons/Facebook.svg";
+import InstagramIcon from "@/assets/icons/Instagram.svg";
+import TiktokIcon from "@/assets/icons/Tiktok.svg";
+import TwitterIcon from "@/assets/icons/Twitter.svg";
 // Usamos rutas relativas para las imágenes
 const sponsors = [
   {
     name: "Banco de Crédito BCP",
-    image: "/src/assets/images/sponsors_2025/LogoBCP.jpg",
+    image: LogoBCP,
+    socialLinks: [
+      { icon: FacebookIcon, url: "#" },
+      { icon: InstagramIcon, url: "#" },
+      { icon: TiktokIcon, url: "#" },
+      { icon: TwitterIcon, url: "#" },
+    ],
+  },
+  {
+    name: "Delve",
+    image: DelveLogo,
+    socialLinks: [
+      { icon: FacebookIcon, url: "#" },
+      { icon: InstagramIcon, url: "#" },
+      { icon: TiktokIcon, url: "#" },
+      { icon: TwitterIcon, url: "#" },
+    ],
   },
   {
     name: "Confiared",
-    image: "/src/assets/images/sponsors_2025/ CONFIARED.svg",
+    image: ConfiaredLogo,
+    socialLinks: [
+      { icon: FacebookIcon, url: "#" },
+      { icon: InstagramIcon, url: "#" },
+      { icon: TiktokIcon, url: "#" },
+      { icon: TwitterIcon, url: "#" },
+    ],
   },
   {
     name: "Creative Commons",
-    image: "/src/assets/images/sponsors_2025/cc_logo.svg",
+    image: CCLogo,
+    socialLinks: [
+      { icon: FacebookIcon, url: "#" },
+      { icon: InstagramIcon, url: "#" },
+      { icon: TiktokIcon, url: "#" },
+      { icon: TwitterIcon, url: "#" },
+    ],
   },
-  { name: "Nexus", image: "/src/assets/images/sponsors_2025/logo-nexus.webp" },
+  {
+    name: "Nexus",
+    image: NexusLogo,
+    socialLinks: [
+      { icon: FacebookIcon, url: "#" },
+      { icon: InstagramIcon, url: "#" },
+      { icon: TiktokIcon, url: "#" },
+      { icon: TwitterIcon, url: "#" },
+    ],
+  },
 ];
 ---
 
@@ -34,12 +82,31 @@ const sponsors = [
       {
         sponsors.map((sponsor) => (
           <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 w-full max-w-[200px]">
-            <div class="aspect-[3/2] relative flex items-center justify-center">
+            {/* Logo del sponsor */}
+            <div class="aspect-[3/2] relative flex items-center justify-center mb-4">
               <img
-                src={sponsor.image}
+                src={sponsor.image.src}
                 alt={sponsor.name}
                 class="w-full h-full object-contain"
               />
+            </div>
+
+            {/* Iconos de redes sociales */}
+            <div class="flex justify-center space-x-3">
+              {sponsor.socialLinks.map((social, index) => (
+                <a
+                  href={social.url}
+                  class="w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 transition-colors duration-200"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src={social.icon.src}
+                    alt={`Social ${index + 1}`}
+                    class="w-5 h-5 opacity-70 hover:opacity-100 transition-opacity duration-200"
+                  />
+                </a>
+              ))}
             </div>
           </div>
         ))

@@ -1,0 +1,34 @@
+---
+import { Image } from "astro:assets"
+
+const { imagePack } = Astro.props
+---
+
+<div class="w-2/3 sm:w-1/3 scale-90">
+  <a href="https://forms.gle/jhKUrgUVV3Fkzd3V9" target="_blank" rel="noopener noreferrer">
+      <div class="atropos gdg-card">
+        <div class="atropos-scale">
+          <div class="atropos-rotate">
+            <div class="atropos-inner">
+              <div class="flex flex-col items-start">
+                <Image src={imagePack} class="rounded-3xl shadow-md" alt="GDG Image Packs" data-atropos-offset="-1" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </a>
+</div>
+
+<script>
+  import "atropos/css"
+  import Atropos from "atropos"
+
+  document.querySelectorAll(".gdg-card").forEach(element => {
+    Atropos({
+      el: element,
+      shadow: false,
+      rotateTouch: "scroll-y",
+    })
+  })
+</script>
