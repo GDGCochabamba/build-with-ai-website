@@ -1,5 +1,5 @@
-import BrianCastillo from "../assets/images/2025/mentors/Brian_Castillo.webp"
 import NicolasMolina from "../assets/images/2025/mentors/Nicolas_Molina.webp"
+import MarianVilla from "../assets/images/2025/mentors/Marian_Villa.webp"
 
 import LuishiñoPericena from "../assets/images/2025/mentors/Luishiño_Pericena.webp"
 import MarceloYañez from "../assets/images/2025/mentors/Marcelo_Yanez.webp"
@@ -8,7 +8,6 @@ import DiegoOliver from "../assets/images/2025/mentors/Diego_Oliver.webp"
 import MartinArispe from "../assets/images/2025/mentors/Martin_Arispe.webp"
 import JosueLemus from "../assets/images/2025/mentors/Josue_Lemus.webp"
 import FernandoSilva from "../assets/images/2025/mentors/Fernando_Silva.webp"
-
 import ErnestoHuanca from "../assets/images/2025/mentors/Ernesto_Huanca.webp"
 import RodrigoTorrico from "../assets/images/2025/mentors/Rodrigo_Torrico.webp"
 import PauloTintaya from "../assets/images/2025/mentors/Paulo_Tintaya.webp"
@@ -24,12 +23,14 @@ import SergioCárdenas from "../assets/images/2025/mentors/Sergio_Cárdenas.webp
 import MarcoAntonioGomez from "../assets/images/2025/mentors/Marco_Antonio_Gomez.webp"
 import AdrianaPaz from "../assets/images/2025/mentors/Adriana_Paz.webp"
 import SebastianGonzales from "../assets/images/2025/mentors/Sebastian_Gonzales.webp"
-import IrvinCossio from "../assets/images/2025/mentors/Irvin_Cossio.webp"
 import PabloNoya from "../assets/images/2025/mentors/Pablo_Noya.webp"
 import AngelFlores from "../assets/images/2025/mentors/Angel_Flores.webp"
 import SergioNuñez from "../assets/images/2025/mentors/Sergio_Nuñez.webp"
 import AlejandroNúñez from "../assets/images/2025/mentors/Alejandro_Núñez.webp"
 import AndreaLaruta from "../assets/images/2025/mentors/Andrea_Laruta.webp"
+import FranklinCastillo from "../assets/images/2025/mentors/Franklin_Castillo.webp"
+import NataliaDuran from "../assets/images/2025/mentors/Natalia_Duran.webp"
+import KevinGomez from "../assets/images/2025/mentors/Kevin_Gomez.webp"
 
 import logoWeb from "../assets/images/social/web.svg"
 import logoLinkedin from "../assets/images/social/linkedin.svg"
@@ -41,17 +42,6 @@ import logoYoutube from "../assets/images/social/youtube.svg"
 
 export const mentors = [
   {
-    img: BrianCastillo,
-    name: "Brian Castillo",
-    bio: "Brian es un desarrollador mobile con más de 10 años de experiencia y Google Developer Expert (GDE) en Firebase.Actualmente es CEO de Navi, una plataforma que usa IA generativa para mejorar procesos de selección y optimizar perfiles profesionales.Antes fué Head of Technology de Guil Mobility Ventures, donde lideró las nuevas iniciativas de tecnología antes de que pasen por le proceso de startups! Fundó y fue CTO de Wibo, una startup con sede en Santiago de Chile que se encarga de mejorar la experiencia de compra en el sitio. Wibo aumenta la eficiencia, las ventas y también utiliza datos basados en transacciones para crear compromiso. Antes de esto, fundó y fue CTO de Horses Developer, una fábrica de software en Lima, Perú. Lideró y participó en proyectos móviles para clientes de toda LATAM. Participa y organiza el capitulo  de las comunidades Google Developer Communities (GDGs) de Lima.",
-    social: [
-      {
-        social_img: logoLinkedin,
-        src: "https://www.linkedin.com/in/briansalvattore/",
-      },
-    ],
-  },
-  {
     img: NicolasMolina,
     name: "Nicolas Molina",
     bio: "I'm Nicolas Molina (@nicobytes) Sr Software Developer with more than 10 years of experience in development and technology management. Recognized by Google as an Angular & Web Developer Expert, and by Microsoft as a Most Valuable Professional.",
@@ -59,6 +49,27 @@ export const mentors = [
       {
         social_img: logoTwitter,
         src: "https://twitter.com/nicobytes",
+      },
+    ],
+  },
+  {
+    img: MarianVilla,
+    name: "Marian Villa",
+    bio: "Co-fundadora de PionerasDev, con +12 años de experiencia como Líder técnica, Diseñadora Fullstack de Productos Digitales y  con experticia en Creación de Comunidades. Le gusta crear Contenido Técnico y Diseño de Productos, especialmente en tecnologías Open Source. Es Google Developer Expert en Tecnologías Web (HTML-CSS-Javascript), Embajadora WTM , y Mentora en Google for startups. Es Fellow de la Real Academia de Ingeniería de Londres.",
+    social: [
+      {
+        social_img: logoWeb,
+        src: "https://linktr.ee/marianvilla",
+      },
+      { social_img: logoLinkedin, src: "https://www.linkedin.com/in/marianvilla" },
+      { social_img: logoGithub, src: "https://github.com/marianvilla" },
+      {
+        social_img: logoTwitter,
+        src: "https://twitter.com/marianvilla",
+      },
+      {
+        social_img: logoInstagram,
+        src: "https://instagram.com/marianvilla",
       },
     ],
   },
@@ -341,15 +352,6 @@ export const mentors = [
     ],
   },
   {
-    img: IrvinCossio,
-    name: "Irvin Cossio",
-    bio: "Irvin es una persona apasionada por la tecnología con 7 años de experiencia laboral, actualmente trabaja En jalasoft y es parte de la red Toptal, especializado en React Native y javascript. Le gusta trabajar con comunidades de tecnología Es GDG Organizer de Cochabamba, Honorario en Scesi y co-organizer de la Women Game Jam Bolivia.",
-    social: [
-      { social_img: logoLinkedin, src: "https://www.linkedin.com/in/irvin373/" },
-      { social_img: logoInstagram, src: "https://www.instagram.com/irvin.chav/" },
-    ],
-  },
-  {
     img: PabloNoya,
     name: "Pablo Noya",
     bio: "Pablo es desarrollador Web Fullstack con experiencia en Python y JavaScript. Ha sido speaker compartiendo conocimientos sobre Desarrollo Web e Inteligencia Artificial, mentor en la hackathon Build with AI Bolivia 2024 y promueve el aprendizaje colaborativo como Lead Organizer del GDG Sucre.",
@@ -419,6 +421,47 @@ export const mentors = [
       {
         social_img: logoFacebook,
         src: "https://www.facebook.com/AndreaGeraldinneLarutaC/",
+      },
+    ],
+  },
+  {
+    img: FranklinCastillo,
+    name: "Franklin Castillo",
+    bio: "Ingeniero Industrial y Administrador de Empresas con más de un año de experiencia en la industria alimentaria. Tiene conocimientos en el análisis y optimización de procesos, así como en la implementación de modelos de Machine Learning Supervisado y No Supervisado aplicados a las áreas de mantenimiento y producción. Adicionalmente, posee experiencia en automatización de procesos mediante integraciones en Google Workspace, incluyendo el desarrollo de soluciones con Google Apps Script y AppSheet.",
+    social: [
+      {
+        social_img: logoLinkedin,
+        src: "https://www.linkedin.com/in/nestor-franklin-castillo-centurio-2520301b0/",
+      },
+    ],
+  },
+  {
+    img: NataliaDuran,
+    name: "Natalia Duran",
+    bio: "Desarrolladora de software apasionada por la tecnología, colabora en iniciativas que promueven el empoderamiento femenino en la tecnología y la libertad a través del voluntariado. Encuentra inspiración en la filosofía, la música y el arte, y se esfuerza por cultivar un camino donde las mujeres puedan prosperar libremente y alcanzar su máximo potencial.",
+    social: [
+      {
+        social_img: logoLinkedin,
+        src: "https://www.linkedin.com/in/natalia-duran-oliva/",
+      },
+    ],
+  },
+  {
+    img: KevinGomez,
+    name: "Kevin  Gomez",
+    bio: "Kevin Gomez es desarrollador full stack con más de 5 años de experiencia y una especialización reciente en Cloud Computing y DevOps. Colabora con empresas locales e internacionales, combinando desarrollo ágil con automatización e infraestructura moderna. Además, es activo en comunidades tech, impulsando el aprendizaje y la innovación.",
+    social: [
+      {
+        social_img: logoLinkedin,
+        src: "https://www.linkedin.com/in/kevinbgr",
+      },
+      {
+        social_img: logoInstagram,
+        src: "https://www.instagram.com/kevin_gomez_rocha",
+      },
+      {
+        social_img: logoGithub,
+        src: "https://github.com/runinbk",
       },
     ],
   },
