@@ -2,13 +2,20 @@
 import { cronograma } from '../../data/charlas.js';
 ---
 
-<section class="py-16 px-4 bg-gray-50">
-  <div class="max-w-5xl mx-auto">
-    {cronograma.map(({ auditorio, actividades }) => (
+<section class="bg-gray-50 p-12">
+  <div class="container mx-auto px-4">
+    <!-- Título de la sección -->
+    <h2 class="text-center text-4xl font-bold mb-8">
+      Agenda de Conferencias
+    </h2>
+
+    <!-- Grid de días -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 max-w-screen-sm lg:max-w-screen-xl mx-auto">
+      {cronograma.map(({ auditorio, actividades }) => (
       <div class="mb-16">
         <h2 class="text-3xl font-bold text-blue-700 text-center mb-6">Track - {auditorio}</h2>
 
-        <div class="bg-white rounded-xl shadow-md overflow-hidden divide-y divide-gray-200">
+        <div class="bg-[#F4F4F4] rounded-xl shadow-md overflow-hidden divide-y divide-blue-300">
           {actividades.map(({ hora, titulo, expositor }) => (
             <div class="grid grid-cols-[100px_1fr] gap-6 px-6 py-5 items-start">
               <div class="text-sm font-semibold text-gray-600">{hora}</div>
@@ -21,5 +28,6 @@ import { cronograma } from '../../data/charlas.js';
         </div>
       </div>
     ))}
+    </div>
   </div>
 </section>
