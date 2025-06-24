@@ -95,49 +95,40 @@ const cronograma = [
 ];
 ---
 
-<section class="py-16 bg-gray-50">
+<section class="bg-[#F4F4F4] pb-12">
   <div class="container mx-auto px-4">
     <!-- Título de la sección -->
-    <div class="text-center mb-16">
-      <h2 class="text-4xl font-bold text-gray-900 mb-4">
-        Cronograma
-      </h2>
-    </div>
+    <h2 class="text-center text-4xl font-bold mb-8">
+      Cronograma
+    </h2>
 
     <!-- Grid de días -->
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 max-w-screen-sm lg:max-w-screen-xl mx-auto">
       {cronograma.map((dia, index) => (
-        <div class="bg-white rounded-2xl p-8 shadow-lg">
+        <div class="bg-white rounded-2xl p-8 w-80 lg:w-auto mx-auto">
           <!-- Encabezado del día -->
-          <div class="text-center mb-8">
-            <h3 class={`text-2xl font-bold mb-6 ${
-              index === 0 ? 'text-blue-600' : 
-              index === 1 ? 'text-blue-600' : 
-              'text-blue-600'
-            }`}>
-              {dia.dia}
-            </h3>
-            
-            <!-- Encabezados de tabla -->
-            <div class="grid grid-cols-2 gap-4 mb-6 pb-3 border-b border-gray-200">
-              <div class="text-lg font-semibold text-gray-900 text-left">Hora</div>
-              <div class="text-lg font-semibold text-gray-900 text-left">Actividad</div>
-            </div>
+          <h3 class='text-2xl text-center font-bold mb-4 text-blue-500'>
+            {dia.dia}
+          </h3>
+
+          <!-- Encabezados de tabla -->
+          <div class="grid grid-cols-[2fr_3fr] gap-4 pb-4 font-bold">
+            <span>Hora</span>
+            <span>Actividad</span>
           </div>
 
           <!-- Lista de actividades -->
-          <div class="space-y-4">
-            {dia.actividades.map((actividad) => (
-              <div class="grid grid-cols-2 gap-4 py-3 border-b border-gray-100 last:border-b-0">
-                <div class="text-sm font-medium text-gray-700">
-                  {actividad.hora}
-                </div>
-                <div class="text-sm text-gray-900">
-                  {actividad.actividad}
-                </div>
-              </div>
-            ))}
-          </div>
+          {dia.actividades.map((actividad) => (
+            <div class="grid grid-cols-[2fr_3fr] gap-4 py-2 text-sm border-b border-blue-300 last:border-b-0">
+              <span class="text-nowrap w-full">
+                {actividad.hora}
+              </span>
+              <span class="font-medium">
+                {actividad.actividad}
+              </span>
+            </div>
+          ))}
+
         </div>
       ))}
     </div>
