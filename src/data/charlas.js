@@ -1,6 +1,6 @@
 export const cronograma = [
     {
-      auditorio: "Auditorio A",
+      auditorio: "Auditorio UCB 1",
       actividades: [
         {
           hora: "10:00 - 10:40",
@@ -35,7 +35,7 @@ export const cronograma = [
       ]
     },
     {
-      auditorio: "Auditorio B",
+      auditorio: "Auditorio UCB 2",
       actividades: [
         {
           hora: "10:00 - 10:40",
@@ -70,7 +70,7 @@ export const cronograma = [
       ]
     },
     {
-      auditorio: "Auditorio C",
+      auditorio: "Auditorio UCB 3",
       actividades: [
         {
           hora: "14:00 - 14:40",
